@@ -1,0 +1,47 @@
+@import "./resets";
+@import "./settings";
+
+@mixin sp-only {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin pc-only {
+  @media (min-width: $breakpoint + 1) {
+    @content;
+  }
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// utility classes
+.hide-sp {
+  @include sp-only {
+    display: none !important;
+  }
+}
+.hide-pc {
+  @include pc-only {
+    display: none !important;
+  }
+}
+@mixin layout {
+  width: 100%;
+  margin: 0 auto;
+}
+.layout {
+  @include layout;
+  max-width: $layoutWidth;
+}
+.max-layout {
+  @include layout;
+  max-width: $maxLayoutWidth;
+}
+img {
+  max-width: 100%;
+}
+
+@import "../typography";

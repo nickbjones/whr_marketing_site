@@ -1,0 +1,190 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+p {
+  margin: 0; }
+
+@media (max-width: 767px) {
+  .hide-sp {
+    display: none !important; } }
+
+@media (min-width: 768px) {
+  .hide-pc {
+    display: none !important; } }
+
+.layout {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 950px; }
+
+.max-layout {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px; }
+
+img {
+  max-width: 100%; }
+
+.txt-black {
+  color: #000000; }
+
+.txt-white {
+  color: #FFFFFF; }
+
+.txt-gray {
+  color: #CCCCCC; }
+
+.txt-green {
+  color: #27C98E; }
+
+.txt-yellow {
+  color: #FFF600; }
+
+.txt-red {
+  color: #F22727; }
+
+.txt-nobreak {
+  white-space: nowrap; }
+
+.txt-12 {
+  font-size: 12px; }
+
+.txt-14 {
+  font-size: 14px; }
+
+.txt-16 {
+  font-size: 16px; }
+
+.txt-17 {
+  font-size: 17px; }
+
+.txt-18 {
+  font-size: 18px; }
+
+.txt-20 {
+  font-size: 20px; }
+
+.txt-22 {
+  font-size: 22px; }
+
+.txt-23 {
+  font-size: 23px; }
+
+.txt-25 {
+  font-size: 25px; }
+
+.txt-26 {
+  font-size: 26px; }
+
+.txt-32 {
+  font-size: 32px; }
+
+.txt-40 {
+  font-size: 40px; }
+
+@media (max-width: 767px) {
+  .txt-sp-12 {
+    font-size: 12px; }
+  .txt-sp-14 {
+    font-size: 14px; }
+  .txt-sp-16 {
+    font-size: 16px; }
+  .txt-sp-17 {
+    font-size: 17px; }
+  .txt-sp-18 {
+    font-size: 18px; }
+  .txt-sp-20 {
+    font-size: 20px; }
+  .txt-sp-22 {
+    font-size: 22px; }
+  .txt-sp-23 {
+    font-size: 23px; }
+  .txt-sp-25 {
+    font-size: 25px; }
+  .txt-sp-26 {
+    font-size: 26px; }
+  .txt-sp-32 {
+    font-size: 32px; }
+  .txt-sp-40 {
+    font-size: 40px; } }
+
+@media (min-width: 768px) {
+  .txt-pc-12 {
+    font-size: 12px; }
+  .txt-pc-14 {
+    font-size: 14px; }
+  .txt-pc-16 {
+    font-size: 16px; }
+  .txt-pc-17 {
+    font-size: 17px; }
+  .txt-pc-18 {
+    font-size: 18px; }
+  .txt-pc-20 {
+    font-size: 20px; }
+  .txt-pc-22 {
+    font-size: 22px; }
+  .txt-pc-23 {
+    font-size: 23px; }
+  .txt-pc-25 {
+    font-size: 25px; }
+  .txt-pc-26 {
+    font-size: 26px; }
+  .txt-pc-32 {
+    font-size: 32px; }
+  .txt-pc-40 {
+    font-size: 40px; } }
+
+.txt-left {
+  text-align: left; }
+
+.txt-center {
+  text-align: center; }
+
+.txt-right {
+  text-align: right; }
+
+.txt-normal {
+  font-weight: 400; }
+
+.txt-bold {
+  font-weight: 500; }
+
+.txt-bolder {
+  font-weight: 600; }
+
+@media (max-width: 767px) {
+  .txt-sp-left {
+    text-align: left; }
+  .txt-sp-center {
+    text-align: center; }
+  .txt-sp-right {
+    text-align: right; }
+  .txt-sp-normal {
+    font-weight: 400; }
+  .txt-sp-bold {
+    font-weight: 500; }
+  .txt-sp-bolder {
+    font-weight: 600; } }
+
+@media (min-width: 768px) {
+  .txt-pc-left {
+    text-align: left; }
+  .txt-pc-center {
+    text-align: center; }
+  .txt-pc-right {
+    text-align: right; }
+  .txt-pc-normal {
+    font-weight: 400; }
+  .txt-pc-bold {
+    font-weight: 500; }
+  .txt-pc-bolder {
+    font-weight: 600; } }
+
+.time-saving-calculator-thanks-page .h1 {
+  color: green; }
+
+.time-saving-calculator-thanks-page .top {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat; }

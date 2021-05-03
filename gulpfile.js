@@ -3,12 +3,12 @@ const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
 
 const srcFiles = [
-  './assets/styles/sass/pages/*.scss',
+  './sass/pages/*.scss',
 ];
 const watchDirs = [
-  './assets/styles/sass/*/*.scss',
+  './sass/*.scss', './sass/*/*.scss'
 ];
-const destDir = './assets/styles/css';
+const destDir = './src/css';
 
 // functions
 const rollupCSS = function() {
