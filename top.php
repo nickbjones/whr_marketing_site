@@ -39,8 +39,6 @@
           </select>
           {$afterLabelHtml}
         </span>
-
-
       </div>
     HTML;
   }
