@@ -13,7 +13,7 @@
           {$smallLabelHtml}
         </label>
         <span class="input-block__input-wrapper input-block__input-wrapper--width-{$inputWidth}">
-          <input class="input-block__input" id="{$name}" name="{$name}" type="{$type}" placeholder="{$placeholder}">
+          <input class="input-block__input" id="{$name}" name="{$name}" type="{$type}" data-onchange placeholder="{$placeholder}">
           {$afterLabelHtml}
         </span>
       </div>
@@ -34,7 +34,7 @@
           {$smallLabelHtml}
         </label>
         <span class="input-block__input-wrapper input-block__input-wrapper--width-{$inputWidth}">
-          <select class="input-block__input input-block__select" id="{$name}" name="{$name}">
+          <select class="input-block__input input-block__select" id="{$name}" name="{$name}" data-onchange>
             {$optionsHtml}
           </select>
           {$afterLabelHtml}
@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="<?= $stylePath ?>/top.css" />
     <!-- remove -->
     <script type="text/javascript" src="./jquery-3.5.1.min.js"></script>
+    <!-- /remove -->
   </head>
   <body class="time-saving-calculator-top-page">
     <div class="top-banner">
@@ -206,17 +207,69 @@
         <p class="txt-sp-23 txt-pc-26 txt-bold small-underline">\  さらにこんな<span class="txt-yellow txt-sp-23 txt-pc-32">特典</span>が！ /</p>
         <p class="txt-sp-17 txt-pc-20 txt-sp-left txt-pc-bold">今回の算出結果について<span class="txt-yellow txt-sp-17 txt-pc-26">より詳しく解説</span>した資料を<span class="txt-yellow txt-sp-17 txt-pc-26">無料</span>でお配りしています！</p>
         <p class="txt-sp-17 txt-pc-20 txt-sp-left txt-pc-bold">メールで<span class="txt-yellow txt-sp-17 txt-pc-26">経費削減のヒント</span>を手に入れよう！</p>
-        <div class="form-wrapper">
-          <input class="email-input" type="text" placeholder="ここにメールアドレスを入力"><br/>
+        <form class="form-wrapper" action="./send-ppt-ctlr.php" method="post">
+          <input type="hidden" id="form-company-name" name="form-company-name">
+          <input type="hidden" id="form-number-of-employees" name="form-number-of-employees">
+          <input type="hidden" id="form-staff-avg-hourly-wage" name="form-staff-avg-hourly-wage">
+          <input type="hidden" id="form-number-of-annual-contract-renewals" name="form-number-of-annual-contract-renewals">
+          <input type="hidden" id="form-contract-creation-time" name="form-contract-creation-time">
+          <input type="hidden" id="form-book-binding-sealing-time" name="form-book-binding-sealing-time">
+          <input type="hidden" id="form-shipping-time" name="form-shipping-time">
+          <input type="hidden" id="form-data-entry" name="form-data-entry">
+          <input type="hidden" id="form-contract-filing" name="form-contract-filing">
+          <input class="email-input" type="email" id="email" name="form-email" placeholder="ここにメールアドレスを入力"><br/>
           <input class="download-button txt-pc-18 txt-pc-22 txt-bold" type="submit" value="資料を受け取る"><br/>
           <p class="txt-12 txt-white txt-left">「資料を受け取る」ボタンをクリックすると、ご入力いただいたメールアドレス宛に資料が送られます。メールが届かない場合は、迷惑メールフォルダ等に振り分けられている可能性もございますので、ご確認をお願いいたします。</p>
-        </div>
+        </form>
         <img class="hayamaru-kun hide-sp" src="<?= $imagePath ?>/bottom-banner-hayamaru-kun.png">
       </div>
     </div>
+    <script>
+      $(document).ready(function() {
+        $('[data-onchange').on('change', function() {
+          // get step 1 inputs
+          var companyName = $('#company-name').val();
+          var noOfEmployees = parseInt($('#number-of-employees').val());
+          var staffAvgHourlyWage = parseInt($('#staff-avg-hourly-wage').val());
+          var numberOfAnnualContractRenewals = parseInt($('#number-of-annual-contract-renewals').val());
+          
+          // get step 2 inputs
+          var contractCreationTime = parseInt($('#contract-creation-time').val());
+          var bookBindingSealingTime = parseInt($('#book-binding-sealing-time').val());
+          var shippingTime = parseInt($('#shipping-time').val());
+          
+          // get step 3 inputs
+          var dataEntry = parseInt($('#data-entry').val());
+          var contractFiling = parseInt($('#contract-filing').val());
 
-    <!-- REMOVE -->
-    <div class="footer"></div>
+          // calc
+          var sumOfTimes = contractCreationTime + bookBindingSealingTime + shippingTime + dataEntry + contractFiling;
+          var timeNow = noOfEmployees * sumOfTimes * numberOfAnnualContractRenewals;
+          var timeWelcomeHr = noOfEmployees * 3 * numberOfAnnualContractRenewals;
 
+          var currentTimeHours = Math.floor(timeNow / 60);
+          var currentTimeMinutes = timeNow % 60;
+          var welcomehrTimeHours = Math.floor(timeWelcomeHr / 60);
+          var welcomehrTimeMinutes = timeWelcomeHr % 60;
+
+          // set vals
+          $('#form-company-name').val(companyName);
+          $('#form-number-of-employees').val(noOfEmployees);
+          $('#form-staff-avg-hourly-wage').val(staffAvgHourlyWage);
+          $('#form-number-of-annual-contract-renewals').val(numberOfAnnualContractRenewals);
+          $('#form-contract-creation-time').val(contractCreationTime);
+          $('#form-book-binding-sealing-time').val(bookBindingSealingTime);
+          $('#form-shipping-time').val(shippingTime);
+          $('#form-data-entry').val(dataEntry);
+          $('#form-contract-filing').val(contractFiling);
+
+          $('#calculator-company-name').html(companyName);
+          $('#calculator-current-time-hours').text(currentTimeHours);
+          $('#calculator-current-time-minutes').text(currentTimeMinutes);
+          $('#calculator-welcomehr-time-hours').text(welcomehrTimeHours);
+          $('#calculator-welcomehr-time-minutes').text(welcomehrTimeMinutes);
+        });
+      });
+    </script>
   </body>
 </html>
