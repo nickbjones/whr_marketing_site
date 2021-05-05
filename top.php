@@ -43,7 +43,6 @@
     HTML;
   }
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,10 +53,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $stylePath ?>/common.css" />
     <link rel="stylesheet" href="<?= $stylePath ?>/top.css" />
+    <!-- remove -->
     <script type="text/javascript" src="./jquery-3.5.1.min.js"></script>
   </head>
   <body class="time-saving-calculator-top-page">
-
     <div class="top-banner">
       <div class="top-banner__inner max-layout">
         <div class="hide-sp">
@@ -72,7 +71,6 @@
         </div>
       </div>
     </div>
-
     <div class="start-simulation-banner">
       <div class="blue-background">
         <p class="txt-white txt-bold txt-sp-17 txt-pc-22">\　シュミレーションSTART！　/</p>
@@ -80,7 +78,6 @@
         <img class="blue-triangle hide-sp" src="<?= $imagePath ?>/blue-triangle-pc.png">
       </div>
     </div>
-    
     <div class="main-body">
       <div class="layout main-body-layout">
         <p class="hayamaru-kun-footnote hide-sp txt-12 txt-right">※ WelcomeHR 公式キャラクター<br/>はやまるくん</p>
@@ -114,11 +111,9 @@
             </div>
           </div>
         </div>
-        
         <div class="txt-center">
           <img src="<?= $imagePath ?>/arrow-green.png">
         </div>
-
         <div class="step step2">
           <div class="step-bubble">
             <img class="step-bubble__icon" src="<?= $imagePath ?>/step-2of3.png">
@@ -162,11 +157,9 @@
             </div>
           </div>
         </div>
-        
         <div class="txt-center">
           <img src="<?= $imagePath ?>/arrow-green.png">
         </div>
-
         <div class="step step3">
           <div class="step-bubble">
             <img class="step-bubble__icon" src="<?= $imagePath ?>/step-3of3.png">
@@ -188,12 +181,10 @@
             </div>
           </div>
         </div>
-
         <div class="txt-center">
           <img class="hide-sp" src="<?= $imagePath ?>/arrow-green.png">
           <img class="hide-pc" src="<?= $imagePath ?>/three-dots.png">
         </div>
-
         <div class="success">
           <img class="hide-sp" src="<?= $imagePath ?>/success-left.png">
           <div class="success__text">
@@ -203,14 +194,12 @@
           <img class="hide-sp" src="<?= $imagePath ?>/success-right.png">
         </div>
       </div>
-
       <div class="blue-background hide-pc">
         <p class="txt-white txt-bold txt-sp-17 txt-pc-22">\　計算結果　/</p>
         <img class="blue-triangle" src="<?= $imagePath ?>/blue-triangle-sp.png">
       </div>
       <?php include('shared/calculator.php'); ?>
     </div>
-
     <div class="bottom-banner">
       <div class="bottom-banner__inner max-layout">
         <img src="<?= $imagePath ?>/more-benefits.png">

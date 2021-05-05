@@ -1,76 +1,42 @@
 // utility classes
-.txt-black {
-  color: $black;
-}
-.txt-white {
-  color: $white;
-}
-.txt-gray {
-  color: $gray;
-}
-.txt-green {
-  color: $green;
-}
-.txt-yellow {
-  color: $yellow;
-}
-.txt-red {
-  color: $red;
-}
-.txt-nobreak {
-  white-space: nowrap;
-}
 
-// other typographic utility classes
-.txt-12 { font-size: 12px; }
-.txt-14 { font-size: 14px; }
-.txt-16 { font-size: 16px; }
-.txt-17 { font-size: 17px; }
-.txt-18 { font-size: 18px; }
-.txt-20 { font-size: 20px; }
-.txt-22 { font-size: 22px; }
-.txt-23 { font-size: 23px; }
-.txt-25 { font-size: 25px; }
-.txt-26 { font-size: 26px; }
-.txt-32 { font-size: 32px; }
-.txt-40 { font-size: 40px; }
-@include sp-only {
-  .txt-sp-12 { font-size: 12px; }
-  .txt-sp-14 { font-size: 14px; }
-  .txt-sp-16 { font-size: 16px; }
-  .txt-sp-17 { font-size: 17px; }
-  .txt-sp-18 { font-size: 18px; }
-  .txt-sp-20 { font-size: 20px; }
-  .txt-sp-22 { font-size: 22px; }
-  .txt-sp-23 { font-size: 23px; }
-  .txt-sp-25 { font-size: 25px; }
-  .txt-sp-26 { font-size: 26px; }
-  .txt-sp-32 { font-size: 32px; }
-  .txt-sp-40 { font-size: 40px; }
-}
-@include pc-only {
-  .txt-pc-12 { font-size: 12px; }
-  .txt-pc-14 { font-size: 14px; }
-  .txt-pc-16 { font-size: 16px; }
-  .txt-pc-17 { font-size: 17px; }
-  .txt-pc-18 { font-size: 18px; }
-  .txt-pc-20 { font-size: 20px; }
-  .txt-pc-22 { font-size: 22px; }
-  .txt-pc-23 { font-size: 23px; }
-  .txt-pc-25 { font-size: 25px; }
-  .txt-pc-26 { font-size: 26px; }
-  .txt-pc-32 { font-size: 32px; }
-  .txt-pc-40 { font-size: 40px; }
-}
+// colors
+$colors: (
+  'black': $black,
+  'white': $white,
+  'gray': $gray,
+  'green': $green,
+  'yellow': $yellow,
+  'red': $red,
+);
 
-// other typographic utility classes
+// font sizes
+$minFontSize: 10;
+$maxFontSize: 50;
+
+
+// generate standard utility classes
+@each $key, $color in $colors {
+  .txt-#{$key} { color: $color; }
+}
+@for $size from $minFontSize through $maxFontSize {
+  .txt-#{$size} { font-size: #{$size}px; }
+}
 .txt-left { text-align: left; }
 .txt-center { text-align: center; }
 .txt-right { text-align: right; }
 .txt-normal { font-weight: $weightNormal; }
 .txt-bold { font-weight: $weightBold; }
 .txt-bolder { font-weight: $weightBolder; }
+
+// generate sp only utility classes
 @include sp-only {
+  @each $key, $color in $colors {
+    .txt-sp-#{$key} { color: $color; }
+  }
+  @for $size from $minFontSize through $maxFontSize {
+    .txt-sp-#{$size} { font-size: #{$size}px; }
+  }
   .txt-sp-left { text-align: left; }
   .txt-sp-center { text-align: center; }
   .txt-sp-right { text-align: right; }
@@ -78,11 +44,24 @@
   .txt-sp-bold { font-weight: $weightBold; }
   .txt-sp-bolder { font-weight: $weightBolder; }
 }
+
+// generate pc only utility classes
 @include pc-only {
+  @each $key, $color in $colors {
+    .txt-pc-#{$key} { color: $color; }
+  }
+  @for $size from $minFontSize through $maxFontSize {
+    .txt-pc-#{$size} { font-size: #{$size}px; }
+  }
   .txt-pc-left { text-align: left; }
   .txt-pc-center { text-align: center; }
   .txt-pc-right { text-align: right; }
   .txt-pc-normal { font-weight: $weightNormal; }
   .txt-pc-bold { font-weight: $weightBold; }
   .txt-pc-bolder { font-weight: $weightBolder; }
+}
+
+// other typographic utility classes
+.txt-nobreak {
+  white-space: nowrap;
 }

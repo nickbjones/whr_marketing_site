@@ -1,12 +1,381 @@
 @import "../shared";
+@import "../components/calculator";
+
+$imagePath: '/src/images/thanks';
 
 .time-saving-calculator-thanks-page {
-  .h1 {
-    color: green;
+  .green-banner {
+    background-color: $green;
+    text-align: center;
+    color: $white;
+    position: relative;
+    @include sp-only {
+      padding: 1.5rem 0 1.25rem;
+    }
+    @include pc-only {
+      padding: 2rem 0;
+    }
+    .green-banner__inner {
+      @include sp-only {
+        max-width: 310px;
+        margin: 0 auto;
+      }
+    }
+    .green-banner__border-bottom {
+      &:after {
+        content: '';
+        display: block;
+        height: 1.5px;
+        margin: 1rem auto 2rem;
+        background-color: $white;
+        @include sp-only {
+          width: 310px;
+        }
+        @include pc-only {
+          width: 78px;
+        }
+      }
+    }
+    .green-banner__text {
+      font-weight: $weightBold;
+      @include sp-only {
+        line-height: 29px;
+        margin: 2.25rem 0;
+      }
+      @include pc-only {
+        margin: 1rem 0;
+      }
+    }
+    .green-banner__green-arrow {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
-  .top {
-    background-image: url(img_flwr.gif), url(paper.gif);
-    background-position: right bottom, left top;
-    background-repeat: no-repeat, repeat;
+  .blue-banner {
+    height: 64px;
+    @include flex-center;
+    position: relative;
+    background-color: $blue;
+    .blue-banner__text {
+      color: $white;
+      font-weight: $weightBold;
+      z-index: 2;
+    }
+    .blue-banner__triangle {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+  .main-body {
+    $leftAndRightMargin: 3rem;
+    @include pc-only {
+      padding-top: 1rem;
+      background-image: url($imagePath + '/page-background.png');
+      background-size: cover;
+      background-position: top center;
+    }
+    .main-body-layout {
+      max-width: calc(950px + 2 * #{$leftAndRightMargin});
+    }
+    .success {
+      @include flex-center;
+      .success__middle {
+        color: $green;
+        text-align: center;
+        line-height: 25px;
+        font-weight: $weightBold;
+        @include sp-only {
+          font-size: 20px;
+          line-height: 25px;
+          padding: 4rem 0 5.5rem;
+          font-weight: $weightBolder;
+          background-image: url($imagePath + '/success-sp.png');
+          background-size: cover;
+          background-position: top center;
+        }
+        @include pc-only {
+          font-size: 24px;
+          line-height: 38px;
+          margin: 0 4rem;
+          padding: 1rem 0;
+          font-weight: $weightBold;
+        }
+      }
+      .mail-sent-image {
+        width: 104px;
+        margin: 1.5rem 0 1rem;
+      }
+    }
+    .get-results-top {
+      @include flex-center;
+      margin: 2.25rem auto 1.25rem;
+      .get-results-top__text {
+        margin: 0 1rem;
+        font-size: 24px;
+        text-align: center;
+        color: $green;
+      }
+    }
+    .get-results-bottom {
+      @include flex-center;
+      flex-wrap: wrap;
+      @include sp-only {
+        max-width: 310px;
+        margin: 2rem auto 2.25rem;
+      }
+      @include pc-only {
+        margin: 0 auto 3.5rem;
+      }
+      .button {
+        @include flex-center;
+        display: inline-flex;
+        margin: 0.5rem 5px 1rem;
+        padding: 0 5px;
+        text-align: center;
+        border-radius: 14px;
+        border: none;
+        box-shadow: 0px 6px 6px #0000001f;
+        cursor: pointer;
+        background-color: $blue;
+        @include sp-only {
+          width: 270px;
+          height: 60px;
+          font-size: 16px;
+        }
+        @include pc-only {
+          width: 220px;
+          height: 52px;
+          font-size: 14px;
+        }
+        &:link, &:visited, &:hover, &:active {
+          color: $white;
+          text-decoration: none;
+        }
+        .button-icon {
+          margin-right: 5px;
+        }
+      }
+      .consultation-button-wrapper {
+        @include flex-center;
+        flex-wrap: wrap;
+        @include sp-only {
+          width: 310px;
+          margin-bottom: 0.5rem;
+        }
+        @include pc-only {
+          width: 412px;
+        }
+      }
+      .consultation-button {
+        width: 100%;
+        background-color: $green;
+        border: 6px solid #23BE86;
+        // background-image: url($imagePath + '/icon-people.png');
+        @include sp-only {
+          font-size: 18px;
+          height: 60px;
+        }
+        @include pc-only {
+          font-size: 17px;
+          height: 70px;
+        }
+      }
+      .consultation-button__fineprint {
+        color: #7B8782;
+      }
+    }
+    .next-steps__header {
+      margin: 3rem 0 0;
+      .black-underline {
+        &:after {
+          content: '';
+          display: block;
+          height: 1.5px;
+          width: 78px;
+          margin: 1rem auto 2rem;
+          background-color: $black;
+        }
+      }
+    }
+    .next-steps__header-icon {
+      margin-bottom: 1rem;
+      @include sp-only {
+        max-width: 234px;
+      }
+      @include pc-only {
+        max-width: 316px;
+      }
+    }
+    .next-steps {
+      @include sp-only {
+        margin-bottom: calc(50vw - 70px);
+      }
+      @include pc-only {
+        margin: 2rem 0;
+      }
+      .step {
+        position: relative;
+        @include sp-only {
+          margin: 2rem 0 calc(50vw - 116px);
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 6px;
+            width: 115px;
+            background-color: $white;
+          }
+        }
+        @include pc-only {
+          display: flex;
+          margin-top: 2rem;
+          padding: 0 1rem;
+        }
+        .step__icon {
+          position: absolute;
+          @include sp-only {
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+          }
+          @include pc-only {
+            top: 0;
+            left: 1rem;
+          }
+        }
+        .step__textblock {
+          text-align: left;
+          @include sp-only {
+            margin: 0 8px;
+            padding: 60px 20px 5rem;
+            border: 6px solid #F4F4F4;
+            border-radius: 20px;
+          }
+          @include pc-only {
+            flex: 1 1 325px;
+            margin: 0 5vw 0 6rem;
+          }
+          .step__body-title {
+            margin-top: 0;
+            font-size: 22px;
+            color: $green;
+          }
+          .step__body-text {
+            margin: 2rem 0;
+            line-height: 28px;
+          }
+        }
+        .step__screen {
+          @include sp-only {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 73%;
+            z-index: 1;
+          }
+          @include pc-only {
+            flex: 1 1 474px;
+          }
+        }
+      }
+      .next-steps__arrow {
+        @include sp-only {
+          margin: 3rem 0;
+        }
+        @include pc-only {
+          margin: -1rem 0 0;
+        }
+      }
+    }
+    .green-circle-wrapper {
+      @include flex-center;
+      flex-wrap: wrap;
+      @include sp-only {
+        margin: 34px 0 60px;
+      }
+      @include pc-only {
+        margin: 1.5rem 0 0;
+      }
+      .green-circle-row {
+        @include flex-center;
+        flex-wrap: wrap;
+        @media screen and (min-width: 328px) and (max-width: 491px) {
+          flex-wrap: nowrap;
+        }
+      }
+      .green-circle-middle {
+        @media screen and (min-width: 328px) and (max-width: 491px) {
+          margin: -20px 40px;
+        }
+      }
+      .green-circle {
+        @include flex-center;
+        flex-direction: column;
+        margin: 7px;
+        padding: 20px 0;
+        text-align: center;
+        background-color: #D2F6E9;
+        @include sp-only {
+          width: 150px;
+          height: 150px;
+          border-radius: 150px;
+        }
+        @include pc-only {
+          width: 177px;
+          height: 177px;
+          border-radius: 177px;
+        }
+        .green-circle__top-text {
+          margin-bottom: 0.5rem;
+          color: $green;
+          font-size: 17px;
+          line-height: 19px;
+        }
+        .green-circle__bottom-text {
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+  .green-banner-2 {
+    @include sp-only {
+      padding: 2rem 0 2.5rem;
+    }
+    .green-banner__inner {
+      @include pc-only {
+        position: relative;
+        max-width: 310px;
+        margin: 0 auto;
+      }
+    }
+    .green-banner__speaker-icon {
+      @include pc-only {
+        position: absolute;
+        top: -1rem;
+        left: -5rem;
+        max-width: 90px;
+      }
+    }
+  }
+  .green-banner-3 {
+    @include sp-only {
+      padding: 2rem 0 2.5rem;
+    }
+  }
+
+  // REMOVE
+  .footer {
+    height: 104px;
+    background-color: #2D2F2E;
   }
 }

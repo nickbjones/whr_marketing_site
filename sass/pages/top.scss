@@ -1,4 +1,5 @@
 @import "../shared";
+@import "../components/calculator";
 
 $imagePath: '/src/images/top';
 
@@ -12,7 +13,7 @@ $imagePath: '/src/images/top';
       height: 88px;
     }
     text-align: center;
-    background-color: #1453C7;
+    background-color: $blue;
     position: relative;
     .blue-triangle {
       position: absolute;
@@ -57,7 +58,6 @@ $imagePath: '/src/images/top';
       color: #646464;
     }
   }
-
   .main-body {
     $leftAndRightMargin: 3rem;
     @include sp-only {
@@ -270,10 +270,6 @@ $imagePath: '/src/images/top';
       }
       .after-contract {
         margin-top: 3rem;
-        @include sp-only {
-        }
-        @include pc-only {
-        }
         .after-contract__steps {
           display: flex;
           @include sp-only {
@@ -317,7 +313,6 @@ $imagePath: '/src/images/top';
             @include pc-only {
               position: absolute;
               z-index: 1;
-
               top: 50%;
               right: -30px;
               transform: translateY(-50%);
@@ -357,6 +352,7 @@ $imagePath: '/src/images/top';
           line-height: 28px;
           margin: 3rem 0 2.5rem;
           font-weight: $weightBolder;
+          // success-sp.png
         }
         @include pc-only {
           font-size: 26px;
@@ -367,9 +363,12 @@ $imagePath: '/src/images/top';
       }
     }
   }
-
-  @import "../components/calculator";
-
+  .calculator {
+    position: relative;
+    @include pc-only {
+      top: 40px;
+    }
+  }
   .bottom-banner {
     @include flex-center;
     flex-direction: column;
