@@ -1,0 +1,146 @@
+/*
+  resets
+*/
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+
+
+/*
+  settings
+*/
+$breakpoint: 767px;
+$layoutWidth: 950px;
+$maxLayoutWidth: 1280px;
+
+$black: #000000;
+$white: #FFFFFF;
+$gray: #CCCCCC;
+$green: #27C98E;
+$yellow: #FFF600;
+$blue: #1453C7;
+$red: #F22727;
+
+$weightNormal: 400;
+$weightBold: 500;
+$weightBolder: 600;
+
+
+/*
+  responsive
+*/
+@mixin sp-only {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin pc-only {
+  @media (min-width: $breakpoint + 1) {
+    @content;
+  }
+}
+.hide-sp {
+  @include sp-only {
+    display: none !important;
+  }
+}
+.hide-pc {
+  @include pc-only {
+    display: none !important;
+  }
+}
+
+/*
+  page layout
+*/
+@mixin layout {
+  width: 100%;
+  margin: 0 auto;
+}
+.layout {
+  @include layout;
+  max-width: $layoutWidth;
+}
+.max-layout {
+  @include layout;
+  max-width: $maxLayoutWidth;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*
+  typography
+*/
+
+$colors: (
+  'black': $black,
+  'white': $white,
+  'gray': $gray,
+  'green': $green,
+  'yellow': $yellow,
+  'red': $red,
+);
+
+$minFontSize: 10;
+$maxFontSize: 50;
+
+// generate standard typographic utility classes
+@each $key, $color in $colors {
+  .txt-#{$key} { color: $color; }
+}
+@for $size from $minFontSize through $maxFontSize {
+  .txt-#{$size} { font-size: #{$size}px; }
+}
+.txt-left { text-align: left; }
+.txt-center { text-align: center; }
+.txt-right { text-align: right; }
+.txt-normal { font-weight: $weightNormal; }
+.txt-bold { font-weight: $weightBold; }
+.txt-bolder { font-weight: $weightBolder; }
+
+// generate sp only typographic utility classes
+@include sp-only {
+  @each $key, $color in $colors {
+    .txt-sp-#{$key} { color: $color; }
+  }
+  @for $size from $minFontSize through $maxFontSize {
+    .txt-sp-#{$size} { font-size: #{$size}px; }
+  }
+  .txt-sp-left { text-align: left; }
+  .txt-sp-center { text-align: center; }
+  .txt-sp-right { text-align: right; }
+  .txt-sp-normal { font-weight: $weightNormal; }
+  .txt-sp-bold { font-weight: $weightBold; }
+  .txt-sp-bolder { font-weight: $weightBolder; }
+}
+
+// generate pc only typographic utility classes
+@include pc-only {
+  @each $key, $color in $colors {
+    .txt-pc-#{$key} { color: $color; }
+  }
+  @for $size from $minFontSize through $maxFontSize {
+    .txt-pc-#{$size} { font-size: #{$size}px; }
+  }
+  .txt-pc-left { text-align: left; }
+  .txt-pc-center { text-align: center; }
+  .txt-pc-right { text-align: right; }
+  .txt-pc-normal { font-weight: $weightNormal; }
+  .txt-pc-bold { font-weight: $weightBold; }
+  .txt-pc-bolder { font-weight: $weightBolder; }
+}
+
+// other typographic utility classes
+.txt-nobreak {
+  white-space: nowrap;
+}

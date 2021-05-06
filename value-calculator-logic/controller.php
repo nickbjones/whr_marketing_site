@@ -4,7 +4,7 @@
   */
   $templateSourceFilename = 'template.pptx';
   $outputPptFilename = 'output.pptx';
-  $redirectTo = '/thanks.php';
+  $redirectTo = '/template-value-calculator-thanks';
 
   $inputZipFilename = 'template.zip';
   $extractFolderName = 'template';
@@ -128,8 +128,7 @@
   */
 
   // send email
-  // $emailSent = wp_mail($email, $emailSubject, $emailMessage, $emailHeaders);
-  $emailSent = true;
+  $emailSent = wp_mail($email, $emailSubject, $emailMessage, $emailHeaders, array('./'.$outputPptFilename));
 
   if ($emailSent) {
     // redirect to thanks page

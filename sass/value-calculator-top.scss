@@ -1,0 +1,478 @@
+@import "./value-calculator-shared-styles";
+@import "./value-calculator-shared-calculator";
+
+$imagePath: '../images/value-calculator-top';
+
+.value-calculator-top-page {
+  .blue-background {
+    @include flex-center;
+    @include sp-only {
+      height: 68px;
+    }
+    @include pc-only {
+      height: 88px;
+    }
+    text-align: center;
+    background-color: $blue;
+    position: relative;
+    .blue-triangle {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+  .top-banner {
+    @include flex-center;
+    text-align: center;
+    background-color: $green;
+    @include sp-only {
+      padding: 50px 0;
+    }
+    @include pc-only {
+      padding: 45px 0;
+    }
+    .top-banner__inner {
+      @include pc-only {
+        background-image: url($imagePath + '/banner-bg-left.png'),
+                          url($imagePath + '/banner-bg-right.png');
+        background-position: left center,
+                            right center;
+        background-repeat: no-repeat,
+                          no-repeat;
+      }
+    }
+    .top-banner__title {
+      @include sp-only {
+        margin: 2rem 0;
+      }
+      @include pc-only {
+        margin: 1rem 0;
+      }
+    }
+  }
+  .start-simulation-banner {
+    .hayamaru-kun-footnote {
+      margin-top: 1rem;
+      color: #646464;
+    }
+  }
+  .main-body {
+    $leftAndRightMargin: 3rem;
+    @include sp-only {
+      padding: 3rem 7px 0;
+    }
+    @include pc-only {
+      padding-top: 1rem;
+      background-image: url($imagePath + '/page-background.png');
+      background-size: cover;
+      background-position: top center;
+    }
+    .main-body-layout {
+      max-width: calc(950px + 2 * #{$leftAndRightMargin});
+    }
+    .how-long-does-it-take {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .enter-all-items {
+      @include sp-only {
+        margin-top: 1rem;
+      }
+      @include pc-only {
+        margin-top: 2px;
+      }
+    }
+    .step {
+      @include sp-only {
+        margin: 4rem 0;
+      }
+      @include pc-only {
+        margin: 2rem $leftAndRightMargin;
+      }
+      .step-bubble {
+        position: relative;
+        display: flex;
+        @include sp-only {
+          flex-direction: column;
+        }
+        @include pc-only {
+          flex-direction: row;
+          box-shadow: 0 4px 4px #0000000f;
+          border-radius: 14px;
+        }
+        .step-bubble__icon {
+          position: absolute;
+          @include sp-only {
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 76px;
+          }
+          @include pc-only {
+            top: -40px;
+            left: -48px;
+            width: 96px;
+            transform: rotate(-10deg);
+          }
+        }
+        .step-bubble__left {
+          border: 3px solid #E6E6E6;
+          background-color: #F7F8F7;
+          @include sp-only {
+            border-radius: 14px;
+            padding: 60px 20px 30px;
+            box-shadow: 0 4px 4px #0000000f;
+          }
+          @include pc-only {
+            flex: 0 0 53%;
+            padding: 40px 40px 40px 55px;
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+          }
+        }
+        .step-bubble__right {
+          @include sp-only {
+            padding: 74px 86px 0;
+          }
+          @include pc-only {
+            flex: 0 0 47%;
+            padding: 120px 60px 58px;
+            background-color: $green;
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
+          }
+        }
+        .step-bubble__title {
+          display: flex;
+          align-items: flex-start;
+          @include sp-only {
+            margin-bottom: 2rem;
+          }
+          @include pc-only {
+            margin-bottom: 2.5rem;
+          }
+        }
+        .step-bubble__title-icon {
+          margin-right: 0.5rem;
+        }
+        .step-bubble__title-text {
+          flex: 0 1 100%;
+          line-height: 23px;
+          align-self: flex-end;
+          @include sp-only {
+            font-size: 18px;
+          }
+          @include pc-only {
+            font-size: 20px;
+          }
+        }
+        .step-bubble__title-small {
+          font-size: 14px;
+          @include sp-only {
+            color: $gray;
+          }
+          @include pc-only {
+            margin-top: 4px;
+          }
+        }
+        .input-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-end;
+        }
+        .input-block {
+          display: inline-flex;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-bottom: 1rem;
+          &--width {
+            &-half {
+              flex: 0 0 50%;
+            }
+            &-full {
+              flex: 0 0 100%;
+            }
+          }
+          &.pc-half {
+            @include pc-only {
+              flex: 0 0 50%;
+              .input-block__input {
+                width: 100%;
+              }
+            }
+          }
+        }
+        @mixin input-block-label-shared {
+          @include sp-only {
+            font-size: 14px;
+          }
+          @include pc-only {
+            font-size: 16px;
+          }
+        }
+        .input-block__label {
+          @include input-block-label-shared;
+          flex: 0 0 100%;
+          line-height: 1;
+        }
+        .input-block__label-small {
+          color: #8F8F8F;
+          @include sp-only {
+            font-size: 12px;
+          }
+          @include pc-only {
+            font-size: 11px;
+          }
+        }
+        .input-block__input-wrapper {
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+          &--width {
+            &-half {
+              flex: 0 1 195px;
+            }
+            &-full {
+              flex: 0 1 390px;
+            }
+          }
+        }
+        .input-block__input {
+          flex: 0 1 auto;
+          border-radius: 8px;
+          border: 3.5px solid #DEDEDE;
+          @include sp-only {
+            padding: 0.5rem 1rem;
+            font-size: 18px;
+          }
+          @include pc-only {
+            padding: 12px 16px;
+            font-size: 20px;
+          }
+          &:focus {
+            border: 3.5px solid $green;
+            outline: none;
+          }
+          &::placeholder,
+          .input-block__select-placeholder {
+            color: $gray;
+          }
+          width: 100%;
+        }
+        .input-block__label-after {
+          @include input-block-label-shared;
+          flex: 0 1 auto;
+          padding: 0 10px 0 4px;
+        }
+      }
+      .after-contract {
+        margin-top: 3rem;
+        .after-contract__steps {
+          display: flex;
+          @include sp-only {
+            flex-direction: column;
+            margin-top: 1rem;
+            padding: 30px 0;
+            background-color: $green;
+            border-radius: 14px;
+          }
+          @include pc-only {
+            flex-direction: row;
+            margin: 1rem -5px 0;
+          }
+        }
+        .after-contract__step {
+          position: relative;
+          text-align: center;
+          color: $white;
+          @include sp-only {
+            padding: 18px 108px 0;
+          }
+          @include pc-only {
+            padding: 55px 27px;
+            background-color: $green;
+            border-radius: 14px;
+            margin: 0 5px;
+          }
+          .after-contract__step-image {
+            @include pc-only {
+              padding: 0 3rem;
+            }
+          }
+          .after-contract__step-text {
+            margin-top: 1rem;
+          }
+          .blue-arrow {
+            @include sp-only {
+              display: block;
+              margin: 1rem auto 0;
+            }
+            @include pc-only {
+              position: absolute;
+              z-index: 1;
+              top: 50%;
+              right: -30px;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+      @include sp-only {
+        &.step1 .step-bubble__title-icon {
+          flex: 0 0 37px;
+        }
+        &.step2 .step-bubble__title-icon {
+          flex: 0 0 38px;
+        }
+        &.step3 .step-bubble__title-icon {
+          flex: 0 0 37px;
+        }
+      }
+      @include pc-only {
+        &.step1 .step-bubble__title-icon {
+          flex: 0 0 42px;
+        }
+        &.step2 .step-bubble__title-icon {
+          flex: 0 0 43px;
+        }
+        &.step3 .step-bubble__title-icon {
+          flex: 0 0 44px;
+        }
+      }
+    }
+    .success {
+      @include flex-center;
+      .success__text {
+        color: $green;
+        @include sp-only {
+          font-size: 20px;
+          line-height: 28px;
+          margin: 3rem 0 2.5rem;
+          font-weight: $weightBolder;
+          // success-sp.png
+        }
+        @include pc-only {
+          font-size: 26px;
+          line-height: 38px;
+          margin: 3rem 4rem 0;
+          font-weight: $weightBold;
+        }
+      }
+    }
+  }
+  .calculator {
+    position: relative;
+    @include pc-only {
+      top: 40px;
+    }
+  }
+  .bottom-banner {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    background-color: $green;
+    color: $white;
+    .bottom-banner__inner {
+      position: relative;
+      @include sp-only {
+        padding: 3rem 2rem;
+      }
+      @include pc-only {
+        padding: 5.5rem 0 4.5rem;
+      }
+      .hayamaru-kun {
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+      }
+    }
+    .small-underline {
+      position: relative;
+      @include sp-only {
+        margin: 1rem 0 2rem;
+      }
+      @include pc-only {
+        margin: 1rem 0 3rem;
+      }
+      padding-bottom: 1rem;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 76px;
+        background-color: $white;
+      }
+    }
+    .form-wrapper {
+      max-width: 490px;
+      @include sp-only {
+        margin: 30px auto 0;
+      }
+      @include pc-only {
+        margin: 50px auto 0;
+      }
+      @mixin form-button-styles {
+        width: 100%;
+        height: 66px;
+        margin: 0.5rem 0 1rem;
+        padding: 0 30px 0 60px;
+        text-align: center;
+        border-radius: 14px;
+        border: none;
+        background-repeat: no-repeat;
+      }
+      .email-input {
+        @include form-button-styles;
+        padding-top: 5px;
+        font-weight: bold;
+        background-color: $white;
+        background-image: url($imagePath + '/icon-mail.png');
+        transition: background-position 0.3s ease;
+        @include sp-only {
+          padding-left: 75px;
+          font-size: 16px;
+          background-position: left 35px center;
+        }
+        @include pc-only {
+          font-size: 20px;
+          background-position: left 85px center;
+          &:focus, &:not(:placeholder-shown) {
+            background-position: left 20px center;
+          }
+        }
+        &::placeholder {
+          color: $gray;
+        }
+      }
+      .download-button {
+        @include form-button-styles;
+        background-color: $yellow;
+        background-image: url($imagePath + '/icon-download.png');
+        box-shadow: 0px 6px 6px #0000001f;
+        cursor: pointer;
+        @include sp-only {
+          font-size: 18px;
+          background-position: left 65px center;
+        }
+        @include pc-only {
+          font-size: 22px;
+          background-position: left 135px center;
+        }
+      }
+    }
+  }
+
+  // REMOVE
+  .footer {
+    height: 104px;
+    background-color: #2D2F2E;
+  }
+
+}
