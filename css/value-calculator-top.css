@@ -1040,10 +1040,10 @@ img {
         margin: 3rem 4rem 0;
         font-weight: 500; } }
 
-.value-calculator-top-page .calculator {
+.value-calculator-top-page .value-calculator-shared-calculator {
   position: relative; }
   @media (min-width: 768px) {
-    .value-calculator-top-page .calculator {
+    .value-calculator-top-page .value-calculator-shared-calculator {
       top: 40px; } }
 
 .value-calculator-top-page .bottom-banner {

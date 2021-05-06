@@ -713,6 +713,11 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media (min-width: 768px) {
+    .value-calculator-thanks-page .main-body .success {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start; } }
   .value-calculator-thanks-page .main-body .success .success__middle {
     color: #27C98E;
     text-align: center;
@@ -731,8 +736,9 @@ img {
       .value-calculator-thanks-page .main-body .success .success__middle {
         font-size: 24px;
         line-height: 38px;
+        max-width: 480px;
         margin: 0 4rem;
-        padding: 1rem 0;
+        padding: 0.5rem 0 1.5rem;
         font-weight: 500; } }
   .value-calculator-thanks-page .main-body .success .mail-sent-image {
     width: 104px;
