@@ -2,7 +2,7 @@
   /**
    * DEV
    */
-  $imagePath = './images/value-calculator-shared-calculator';
+  $calculatorImagePath = './images/value-calculator-shared-calculator';
 
   $companyName = isset($_GET['cn']) ? $_GET['cn'] : '';
   $timeBefore = isset($_GET['tb']) ? $_GET['tb'] : 0;
@@ -17,7 +17,7 @@
     <div class="calculator__row calculator__current-time">
       <div class="calculator__label">
         <span class="calculator__label-logo">
-          <img class="" src="/images/value-calculator-shared/icon-calculator.png" alt="">
+          <img class="" src="<?= $calculatorImagePath ?>/icon-calculator.png" alt="">
         </span>
         <span class="calculator__label-text">現在 <span id="calculator-company-name"><?= $companyName ?></span>(株)様 が年間で契約処理にかかっている時間は･･･</span>
       </div>
@@ -31,7 +31,7 @@
     <div class="calculator__row calculator__welcomehr-time">
       <div class="calculator__label">
         <span class="calculator__label-logo">
-          <img class="" src="/images/value-calculator-shared/icon-bank.png" alt="">
+          <img class="" src="<?= $calculatorImagePath ?>/icon-bank.png" alt="">
         </span>
         <span class="calculator__label-text">WelcomeHRを使うとわずかこれだけの作業時間に！</span>
       </div>
