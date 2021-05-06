@@ -34,6 +34,9 @@ $imagePath: '../images/value-calculator-top';
       padding: 45px 0;
     }
     .top-banner__inner {
+      @include sp-only {
+        @include centerTablet;
+      }
       @include pc-only {
         background-image: url($imagePath + '/banner-bg-left.png'),
                           url($imagePath + '/banner-bg-right.png');
@@ -122,8 +125,9 @@ $imagePath: '../images/value-calculator-top';
           border: 3px solid #E6E6E6;
           background-color: #F7F8F7;
           @include sp-only {
-            border-radius: 14px;
+            @include centerTablet;
             padding: 60px 20px 30px;
+            border-radius: 14px;
             box-shadow: 0 4px 4px #0000000f;
           }
           @include pc-only {
@@ -135,6 +139,7 @@ $imagePath: '../images/value-calculator-top';
         }
         .step-bubble__right {
           @include sp-only {
+            @include centerTablet;
             padding: 74px 86px 0;
           }
           @include pc-only {
@@ -270,6 +275,9 @@ $imagePath: '../images/value-calculator-top';
       }
       .after-contract {
         margin-top: 3rem;
+        @include sp-only {
+          @include centerTablet;
+        }
         .after-contract__steps {
           display: flex;
           @include sp-only {

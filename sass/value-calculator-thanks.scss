@@ -217,7 +217,11 @@ $imagePath: '../images/value-calculator-thanks';
     }
     .next-steps {
       @include sp-only {
+        @include centerTablet;
         margin-bottom: calc(50vw - 70px);
+      }
+      @media (min-width: 500px) and (max-width: $breakpoint) {
+        margin-bottom: 10rem;
       }
       @include pc-only {
         margin: 2rem 0;
@@ -226,6 +230,9 @@ $imagePath: '../images/value-calculator-thanks';
         position: relative;
         @include sp-only {
           margin: 2rem 0 calc(50vw - 116px);
+          @media (min-width: 500px) and (max-width: $breakpoint) {
+            margin-bottom: 8rem;
+          }
           &:after {
             content: '';
             position: absolute;

@@ -1,4 +1,9 @@
 .value-calculator-shared-calculator {
+  .calculator-inner-layout {
+    @include sp-only {
+      @include centerTablet;
+    }
+  }
   background-color: #EDFFF9;
   box-shadow: 0px 8px 8px #0000001f;
   @include sp-only {
@@ -75,6 +80,7 @@
   }
   .calculator__current-time {
     @include sp-only {
+      align-items: center;
       margin-bottom: 4rem;
     }
     @include pc-only {
@@ -140,6 +146,7 @@
   .calculator__welcomehr-time {
     color: $green;
     @include sp-only {
+      align-items: center;
       margin-bottom: 2rem;
     }
     .calculator__label {

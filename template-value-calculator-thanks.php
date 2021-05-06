@@ -64,7 +64,7 @@
       <span class="blue-banner__text">\　計算結果　/</span>
       <img class="blue-banner__triangle" src="<?= $imagePath ?>/blue-triangle.png">
     </div>
-    <?php include('./shared/calculator.php'); ?>
+    <?php include('./value-calculator-shared-calculator.php'); ?>
     <?= getResults($imagePath) ?>
   </div>
   <div class="green-banner green-banner-1">

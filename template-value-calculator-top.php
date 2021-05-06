@@ -190,12 +190,12 @@
         <img class="hide-sp" src="<?= $imagePath ?>/success-right.png">
       </div>
     </div>
-    <div class="blue-background hide-pc">
-      <p class="txt-white txt-bold txt-sp-17 txt-pc-22">\　計算結果　/</p>
-      <img class="blue-triangle" src="<?= $imagePath ?>/blue-triangle-sp.png">
-    </div>
-    <?php include('./shared/calculator.php'); ?>
   </div>
+  <div class="blue-background hide-pc">
+    <p class="txt-white txt-bold txt-sp-17 txt-pc-22">\　計算結果　/</p>
+    <img class="blue-triangle" src="<?= $imagePath ?>/blue-triangle-sp.png">
+  </div>
+  <?php include('./value-calculator-shared-calculator.php'); ?>
   <div class="bottom-banner">
     <div class="bottom-banner__inner max-layout">
       <img src="<?= $imagePath ?>/more-benefits.png">

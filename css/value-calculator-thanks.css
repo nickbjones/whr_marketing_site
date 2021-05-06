@@ -424,6 +424,10 @@ img {
   -webkit-box-shadow: 0px 8px 8px #0000001f;
   box-shadow: 0px 8px 8px #0000001f; }
   @media (max-width: 767px) {
+    .value-calculator-shared-calculator .calculator-inner-layout {
+      max-width: 480px;
+      margin: 0 auto; } }
+  @media (max-width: 767px) {
     .value-calculator-shared-calculator {
       padding: 60px 2rem 3rem; } }
   @media (min-width: 768px) {
@@ -515,6 +519,9 @@ img {
       margin-bottom: 20px; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator .calculator__current-time {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
       margin-bottom: 4rem; } }
   @media (min-width: 768px) {
     .value-calculator-shared-calculator .calculator__current-time {
@@ -578,6 +585,9 @@ img {
     color: #27C98E; }
     @media (max-width: 767px) {
       .value-calculator-shared-calculator .calculator__welcomehr-time {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         margin-bottom: 2rem; } }
     .value-calculator-shared-calculator .calculator__welcomehr-time .calculator__label {
       -webkit-box-flex: 1;
@@ -872,7 +882,13 @@ img {
 
 @media (max-width: 767px) {
   .value-calculator-thanks-page .main-body .next-steps {
+    max-width: 480px;
+    margin: 0 auto;
     margin-bottom: calc(50vw - 70px); } }
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .value-calculator-thanks-page .main-body .next-steps {
+    margin-bottom: 10rem; } }
 
 @media (min-width: 768px) {
   .value-calculator-thanks-page .main-body .next-steps {
@@ -882,7 +898,11 @@ img {
   position: relative; }
   @media (max-width: 767px) {
     .value-calculator-thanks-page .main-body .next-steps .step {
-      margin: 2rem 0 calc(50vw - 116px); }
+      margin: 2rem 0 calc(50vw - 116px); } }
+  @media (max-width: 767px) and (min-width: 500px) and (max-width: 767px) {
+    .value-calculator-thanks-page .main-body .next-steps .step {
+      margin-bottom: 8rem; } }
+  @media (max-width: 767px) {
       .value-calculator-thanks-page .main-body .next-steps .step:after {
         content: '';
         position: absolute;

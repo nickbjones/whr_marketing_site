@@ -424,6 +424,10 @@ img {
   -webkit-box-shadow: 0px 8px 8px #0000001f;
   box-shadow: 0px 8px 8px #0000001f; }
   @media (max-width: 767px) {
+    .value-calculator-shared-calculator .calculator-inner-layout {
+      max-width: 480px;
+      margin: 0 auto; } }
+  @media (max-width: 767px) {
     .value-calculator-shared-calculator {
       padding: 60px 2rem 3rem; } }
   @media (min-width: 768px) {
@@ -515,6 +519,9 @@ img {
       margin-bottom: 20px; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator .calculator__current-time {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
       margin-bottom: 4rem; } }
   @media (min-width: 768px) {
     .value-calculator-shared-calculator .calculator__current-time {
@@ -578,6 +585,9 @@ img {
     color: #27C98E; }
     @media (max-width: 767px) {
       .value-calculator-shared-calculator .calculator__welcomehr-time {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         margin-bottom: 2rem; } }
     .value-calculator-shared-calculator .calculator__welcomehr-time .calculator__label {
       -webkit-box-flex: 1;
@@ -670,6 +680,10 @@ img {
   @media (min-width: 768px) {
     .value-calculator-top-page .top-banner {
       padding: 45px 0; } }
+  @media (max-width: 767px) {
+    .value-calculator-top-page .top-banner .top-banner__inner {
+      max-width: 480px;
+      margin: 0 auto; } }
   @media (min-width: 768px) {
     .value-calculator-top-page .top-banner .top-banner__inner {
       background-image: url("../images/value-calculator-top/banner-bg-left.png"), url("../images/value-calculator-top/banner-bg-right.png");
@@ -762,8 +776,10 @@ img {
     background-color: #F7F8F7; }
     @media (max-width: 767px) {
       .value-calculator-top-page .main-body .step .step-bubble .step-bubble__left {
-        border-radius: 14px;
+        max-width: 480px;
+        margin: 0 auto;
         padding: 60px 20px 30px;
+        border-radius: 14px;
         -webkit-box-shadow: 0 4px 4px #0000000f;
         box-shadow: 0 4px 4px #0000000f; } }
     @media (min-width: 768px) {
@@ -776,6 +792,8 @@ img {
         border-bottom-left-radius: 14px; } }
   @media (max-width: 767px) {
     .value-calculator-top-page .main-body .step .step-bubble .step-bubble__right {
+      max-width: 480px;
+      margin: 0 auto;
       padding: 74px 86px 0; } }
   @media (min-width: 768px) {
     .value-calculator-top-page .main-body .step .step-bubble .step-bubble__right {
@@ -935,6 +953,10 @@ img {
 
 .value-calculator-top-page .main-body .step .after-contract {
   margin-top: 3rem; }
+  @media (max-width: 767px) {
+    .value-calculator-top-page .main-body .step .after-contract {
+      max-width: 480px;
+      margin: 0 auto; } }
   .value-calculator-top-page .main-body .step .after-contract .after-contract__steps {
     display: -webkit-box;
     display: -ms-flexbox;

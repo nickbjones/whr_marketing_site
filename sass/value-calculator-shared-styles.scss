@@ -55,6 +55,10 @@ $weightBolder: 600;
     display: none !important;
   }
 }
+@mixin centerTablet {
+  max-width: 480px;
+  margin: 0 auto;
+}
 
 /*
   page layout
