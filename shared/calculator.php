@@ -7,7 +7,7 @@
   $timeAfterHrs = floor($timeAfter / 60);
   $timeAfterMins = fmod($timeAfter, 60);
 ?>
-<div class="calculator layout">
+<div class="value-calculator-shared-calculator layout">
   <div class="calculator__row calculator__current-time">
     <div class="calculator__label">
       <span class="calculator__label-logo">

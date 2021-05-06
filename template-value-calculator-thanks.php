@@ -1,9 +1,14 @@
 <?php
-  /* Template Name: Value Calculator Thanks Page */
-  $GLOBALS["page"] = "value-calculator-thanks";
-  get_header();
+  /**
+   * DEV
+   */
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 
-  $imagePath = get_template_directory_uri().'./images/value-calculator-thanks';
+  $imagePath = './images/value-calculator-thanks';
+
+  include('./_head.php');
 
   function getResults($imagePath) {
     return <<<HTML
@@ -37,7 +42,7 @@
     HTML;
   }
 ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/value-calculator-top.css?v=<?php version() ?>" />
+<link rel="stylesheet" href="./css/value-calculator-thanks.css" />
 
 <div class="value-calculator-thanks-page">
   <div class="main-body">
@@ -59,7 +64,7 @@
       <span class="blue-banner__text">\　計算結果　/</span>
       <img class="blue-banner__triangle" src="<?= $imagePath ?>/blue-triangle.png">
     </div>
-    <?php include('./value-calculator-shared-calculator.php'); ?>
+    <?php include('./shared/calculator.php'); ?>
     <?= getResults($imagePath) ?>
   </div>
   <div class="green-banner green-banner-1">
@@ -152,4 +157,5 @@
     <?= getResults($imagePath) ?>
   </div>
 </div>
-<?php get_footer(); ?>
+<?php // get_footer(); ?>
+<?php include('./_foot.php');; ?>

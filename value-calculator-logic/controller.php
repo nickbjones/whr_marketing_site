@@ -1,10 +1,18 @@
 <?php
+  /**
+   * DEV
+   */
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+
   /*
     settings
   */
   $templateSourceFilename = 'template.pptx';
   $outputPptFilename = 'output.pptx';
-  $redirectTo = '/template-value-calculator-thanks';
+  // $redirectTo = '/template-value-calculator-thanks';
+  $redirectTo = '/template-value-calculator-thanks.php';
 
   $inputZipFilename = 'template.zip';
   $extractFolderName = 'template';
@@ -128,7 +136,8 @@
   */
 
   // send email
-  $emailSent = wp_mail($email, $emailSubject, $emailMessage, $emailHeaders, array('./'.$outputPptFilename));
+  // $emailSent = wp_mail($email, $emailSubject, $emailMessage, $emailHeaders, array('./'.$outputPptFilename));
+  $emailSent = true;
 
   if ($emailSent) {
     // redirect to thanks page

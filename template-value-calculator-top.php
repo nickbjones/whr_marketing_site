@@ -1,9 +1,14 @@
 <?php
-  /* Template Name: Value Calculator Top Page */
-  $GLOBALS["page"] = "value-calculator-top";
-  get_header();
+  /**
+   * DEV
+   */
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 
-  $imagePath = get_template_directory_uri().'./images/value-calculator-top';
+  $imagePath = './images/value-calculator-top';
+  
+  include('./_head.php');
 
   function inputBlock($name, $label, $smallLabel, $placeholder, $afterLabel, $blockWidth, $inputWidth, $classList, $type) {
     $smallLabelHtml = $smallLabel == '' ? '' : '<span class="input-block__label-small txt-nobreak">'.$smallLabel.'</span>';
@@ -45,7 +50,7 @@
     HTML;
   }
 ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/value-calculator-top.css?v=<?php version() ?>" />
+<link rel="stylesheet" href="./css/value-calculator-top.css" />
 
 <div class="value-calculator-top-page">
   <div class="top-banner">
@@ -189,7 +194,7 @@
       <p class="txt-white txt-bold txt-sp-17 txt-pc-22">\　計算結果　/</p>
       <img class="blue-triangle" src="<?= $imagePath ?>/blue-triangle-sp.png">
     </div>
-    <?php include('./value-calculator-shared-calculator.php'); ?>
+    <?php include('./shared/calculator.php'); ?>
   </div>
   <div class="bottom-banner">
     <div class="bottom-banner__inner max-layout">
@@ -262,4 +267,5 @@
     });
   </script>
 </div>
-<?php get_footer(); ?>
+<?php // get_footer(); ?>
+<?php include('./_foot.php');; ?>
