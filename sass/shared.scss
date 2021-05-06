@@ -1,6 +1,34 @@
-@import "./resets";
-@import "./settings";
+// resets
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
 
+// settings
+$breakpoint: 767px;
+$layoutWidth: 950px;
+$maxLayoutWidth: 1280px;
+
+// shared colors
+$black: #000000;
+$white: #FFFFFF;
+$gray: #CCCCCC;
+$green: #27C98E;
+$yellow: #FFF600;
+$blue: #1453C7;
+$red: #F22727;
+
+// shared weights
+$weightNormal: 400;
+$weightBold: 500;
+$weightBolder: 600;
+
+// responsive
 @mixin sp-only {
   @media (max-width: $breakpoint) {
     @content;
@@ -17,7 +45,6 @@
   align-items: center;
 }
 
-// utility classes
 .hide-sp {
   @include sp-only {
     display: none !important;
@@ -28,6 +55,10 @@
     display: none !important;
   }
 }
+
+// utility classes
+@import "./typography";
+
 @mixin layout {
   width: 100%;
   margin: 0 auto;
@@ -40,8 +71,3 @@
   @include layout;
   max-width: $maxLayoutWidth;
 }
-img {
-  max-width: 100%;
-}
-
-@import "../typography";
