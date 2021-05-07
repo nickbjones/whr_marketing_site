@@ -13,18 +13,18 @@
   function inputBlock($name, $label, $smallLabel, $placeholder, $afterLabel, $blockWidth, $inputWidth, $classList, $type) {
     $smallLabelHtml = $smallLabel == '' ? '' : '<span class="input-block__label-small txt-nobreak">'.$smallLabel.'</span>';
     $afterLabelHtml = $afterLabel == '' ? '' : '<span class="input-block__label-after">'.$afterLabel.'</span>';
-    return <<<HTML
-      <div class="input-block input-block--width-{$blockWidth} {$classList}">
-        <label class="input-block__label" for="{$name}">
-          <span class="txt-nobreak">{$label}</span>
-          {$smallLabelHtml}
+    return '
+      <div class="input-block input-block--width-'.$blockWidth.' '.$classList.'">
+        <label class="input-block__label" for="'.$name.'">
+          <span class="txt-nobreak">'.$label.'</span>
+          '.$smallLabelHtml.'
         </label>
-        <span class="input-block__input-wrapper input-block__input-wrapper--width-{$inputWidth}">
-          <input class="input-block__input" id="{$name}" name="{$name}" type="{$type}" data-onchange placeholder="{$placeholder}">
-          {$afterLabelHtml}
+        <span class="input-block__input-wrapper input-block__input-wrapper--width-'.$inputWidth.'">
+          <input class="input-block__input" id="'.$name.'" name="'.$name.'" type="'.$type.'" data-onchange placeholder="'.$placeholder.'">
+          '.$afterLabelHtml.'
         </span>
       </div>
-    HTML;
+    ';
   }
 
   function dropdownBlock($name, $label, $smallLabel, $placeholder, $afterLabel, $blockWidth, $inputWidth, $classList, $options) {
@@ -34,20 +34,20 @@
     foreach ($options as $option) {
       $optionsHtml .= '<option value="'.$option.'">'.$option.'</option>';
     }
-    return <<<HTML
-      <div class="input-block input-block--width-{$blockWidth} {$classList}">
-        <label class="input-block__label" for="{$name}">
-          <span class="txt-nobreak">{$label}</span>
-          {$smallLabelHtml}
+    return '
+      <div class="input-block input-block--width-'.$blockWidth.' '.$classList.'">
+        <label class="input-block__label" for="'.$name.'">
+          <span class="txt-nobreak">'.$label.'</span>
+          '.$smallLabelHtml.'
         </label>
-        <span class="input-block__input-wrapper input-block__input-wrapper--width-{$inputWidth}">
-          <select class="input-block__input input-block__select" id="{$name}" name="{$name}" data-onchange>
-            {$optionsHtml}
+        <span class="input-block__input-wrapper input-block__input-wrapper--width-'.$inputWidth.'">
+          <select class="input-block__input input-block__select" id="'.$name.'" name="'.$name.'" data-onchange>
+            '.$optionsHtml.'
           </select>
-          {$afterLabelHtml}
+          '.$afterLabelHtml.'
         </span>
       </div>
-    HTML;
+    ';
   }
 ?>
 <link rel="stylesheet" href="./css/value-calculator-top.css" />
