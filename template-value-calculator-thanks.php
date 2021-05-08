@@ -7,39 +7,40 @@
   error_reporting(E_ALL);
 
   $imagePath = './images/value-calculator-thanks';
+  $downloadFileName = 'output.pptx';
 
   include('./_head.php');
 
   function getResults($imagePath) {
-    return <<<HTML
+    return '
       <div class="get-results-top hide-sp">
-        <img src="{$imagePath}/document-stamp.png">
+        <img src="'.$imagePath.'/document-stamp.png">
         <p class="get-results-top__text">今回算出した時間短縮データの<br/>資料をこちらからも取得できます</p>
-        <img src="{$imagePath}/hayamaru-kun.png">
+        <img src="'.$imagePath.'/hayamaru-kun.png">
       </div>
       <div class="get-results-bottom layout">
-        <a class="button" href=""><img class="button-icon" src="{$imagePath}/icon-download.png">ダウンロードする</a>
+        <a class="button download-button" href="'.get_template_directory_uri().'/value-calculator-logic/'.$downloadFileName.'" download="'.$downloadFileName.'"><img class="button-icon" src="'.$imagePath.'/icon-download.png">ダウンロードする</a>
         <div class="consultation-button-wrapper hide-pc">
-          <a class="button consultation-button" href=""><img class="button-icon" src="{$imagePath}/icon-people.png"><span class="txt-yellow">無料トライアル</span>のご相談</a>
+          <a class="button consultation-button" href="/ja/contact"><img class="button-icon" src="'.$imagePath.'/icon-people.png"><span class="txt-yellow">無料トライアル</span>のご相談</a>
           <p class="consultation-button__fineprint txt-11">「無料トライアル」や「お見積り」「不明点」等、ぜひお気軽にご相談ください。担当者が丁寧にご説明させていただきます。</p>
         </div>
-        <a class="button" href=""><img class="button-icon" src="{$imagePath}/icon-calculator.png">もう一度計算をする</a>
-        <a class="button" href=""><img class="button-icon" src="{$imagePath}/icon-share.png">この結果を他の人にシェア</a>
+        <a class="button recalculate-button" href="/ja/value-calculator"><img class="button-icon" src="'.$imagePath.'/icon-calculator.png">もう一度計算をする</a>
+        <a class="button share-button" href="#"><img class="button-icon" src="'.$imagePath.'/icon-share.png">この結果を他の人にシェア</a>
         <div class="consultation-button-wrapper hide-sp">
-          <a class="button consultation-button" href=""><img class="button-icon" src="{$imagePath}/icon-people.png"><span class="txt-yellow">無料トライアル</span>のご相談</a>
+          <a class="button consultation-button" href="/ja/contact"><img class="button-icon" src="'.$imagePath.'/icon-people.png"><span class="txt-yellow">無料トライアル</span>のご相談</a>
           <p class="consultation-button__fineprint txt-12">「無料トライアル」や「お見積り」「不明点」等、ぜひお気軽にご相談ください。担当者が丁寧にご説明させていただきます。</p>
         </div>
       </div>
-    HTML;
+    ';
   }
 
   function greenCircle($topText, $bottomText) {
-    return <<<HTML
+    return '
       <div class="green-circle">
-        <p class="green-circle__top-text txt-bolder">{$topText}</p>
-        <p class="green-circle__bottom-text">{$bottomText}</p>
+        <p class="green-circle__top-text txt-bolder">'.$topText.'</p>
+        <p class="green-circle__bottom-text">'.$bottomText.'</p>
       </div>
-    HTML;
+    ';
   }
 ?>
 <link rel="stylesheet" href="./css/value-calculator-thanks.css" />
