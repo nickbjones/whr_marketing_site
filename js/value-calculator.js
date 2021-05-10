@@ -4,12 +4,12 @@ $(document).ready(function() {
    * top page scripts
    */
 
-  $('.value-calculator-top-page').on('change', '[data-onchange]', function() {
+  function runCalculation() {
     // get inputs
     const companyName = $('#company-name').val();
     const noOfEmployees = parseInt($('#number-of-employees').val()) || 0;
     const staffAvgHourlyWage = parseInt($('#staff-avg-hourly-wage').val()) || 0;
-    const numberOfAnnualContractRenewals = parseInt($('#number-of-annual-contract-renewals').val()) || 0;
+    const numberOfAnnualContractRenewals = parseInt($('#number-of-annual-contract-renewals').val()) || 1;
     const contractCreationTime = parseInt($('#contract-creation-time').val()) || 0;
     const bookBindingSealingTime = parseInt($('#book-binding-sealing-time').val()) || 0;
     const shippingTime = parseInt($('#shipping-time').val()) || 0;
@@ -18,12 +18,12 @@ $(document).ready(function() {
 
     // run calculations
     const sumOfTimes = contractCreationTime + bookBindingSealingTime + shippingTime + dataEntry + contractFiling;
-    const timeNow = noOfEmployees * sumOfTimes * numberOfAnnualContractRenewals;
-    const timeWelcomeHr = noOfEmployees * 3 * numberOfAnnualContractRenewals;
-    const currentTimeHours = Math.floor(timeNow / 60);
-    const currentTimeMinutes = timeNow % 60;
-    const welcomehrTimeHours = Math.floor(timeWelcomeHr / 60);
-    const welcomehrTimeMinutes = timeWelcomeHr % 60;
+    const timeBefore = noOfEmployees * sumOfTimes * numberOfAnnualContractRenewals;
+    const timeAfter = noOfEmployees * 3 * numberOfAnnualContractRenewals;
+    const currentTimeHours = Math.floor(timeBefore / 60);
+    const currentTimeMinutes = timeBefore % 60;
+    const welcomehrTimeHours = Math.floor(timeAfter / 60);
+    const welcomehrTimeMinutes = timeAfter % 60;
 
     // set values to send
     $('#form-company-name').val(companyName);
@@ -42,6 +42,29 @@ $(document).ready(function() {
     $('#calculator-current-time-minutes').text(currentTimeMinutes);
     $('#calculator-welcomehr-time-hours').text(welcomehrTimeHours);
     $('#calculator-welcomehr-time-minutes').text(welcomehrTimeMinutes);
-  });
+  }
+
+  function checkInputs(event) {
+    if (!$('#company-name').val() ||
+        !$('#number-of-employees').val() ||
+        !$('#staff-avg-hourly-wage').val() ||
+        !$('#contract-creation-time').val() ||
+        !$('#book-binding-sealing-time').val() ||
+        !$('#shipping-time').val() ||
+        !$('#data-entry').val() ||
+        !$('#contract-filing').val() ||
+        !$('#email').val()) {
+      event.preventDefault();
+    }
+  }
+
+  // run calculation on page load
+  runCalculation();
+
+  // run calculation on any input change
+  $('.value-calculator-top-page').on('change', '[data-onchange]', runCalculation);
+
+  // prevent form send if any inputs are empty
+  $('#form').submit((event) => checkInputs(event));
 
 });

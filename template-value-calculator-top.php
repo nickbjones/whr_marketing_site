@@ -202,7 +202,7 @@
       <p class="txt-sp-23 txt-pc-26 txt-bold small-underline">\  さらにこんな<span class="txt-yellow txt-sp-23 txt-pc-32">特典</span>が！ /</p>
       <p class="txt-sp-17 txt-pc-20 txt-sp-left txt-pc-bold">今回の算出結果について<span class="txt-yellow txt-sp-17 txt-pc-26">より詳しく解説</span>した資料を<span class="txt-yellow txt-sp-17 txt-pc-26">無料</span>でお配りしています！</p>
       <p class="txt-sp-17 txt-pc-20 txt-sp-left txt-pc-bold">メールで<span class="txt-yellow txt-sp-17 txt-pc-26">経費削減のヒント</span>を手に入れよう！</p>
-      <form class="form-wrapper" action="./value-calculator-logic/controller.php" method="post">
+      <form class="form-wrapper" id="form" action="./value-calculator-logic/controller.php" method="post">
         <input type="hidden" id="form-company-name" name="form-company-name">
         <input type="hidden" id="form-number-of-employees" name="form-number-of-employees">
         <input type="hidden" id="form-staff-avg-hourly-wage" name="form-staff-avg-hourly-wage">
