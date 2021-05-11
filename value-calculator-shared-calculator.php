@@ -4,9 +4,9 @@
    */
   $calculatorImagePath = './images/value-calculator-shared-calculator';
 
-  $companyName = isset($_GET['cn']) ? $_GET['cn'] : '';
-  $timeBefore = isset($_GET['tb']) ? $_GET['tb'] : 0;
-  $timeAfter = isset($_GET['ta']) ? $_GET['ta'] : 0;
+  $companyName = isset($_GET['companyname']) ? $_GET['companyname'] : '';
+  $timeBefore = isset($_GET['timebefore']) ? $_GET['timebefore'] : 0;
+  $timeAfter = isset($_GET['timeafter']) ? $_GET['timeafter'] : 0;
   $timeBeforeHrs = floor($timeBefore / 60);
   $timeBeforeMins = fmod($timeBefore, 60);
   $timeAfterHrs = floor($timeAfter / 60);

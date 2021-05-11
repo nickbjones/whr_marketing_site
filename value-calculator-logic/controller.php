@@ -11,7 +11,9 @@
   */
   $templateSourceFilename = 'template.pptx';
   $outputPptFilename = 'output.pptx';
+  // $redirectFrom = '/template-value-calculator-top';
   // $redirectTo = '/template-value-calculator-thanks';
+  $redirectFrom = '/template-value-calculator-top.php';
   $redirectTo = '/template-value-calculator-thanks.php';
 
   $inputZipFilename = 'template.zip';
@@ -142,15 +144,15 @@
   if ($emailSent) {
     // redirect to thanks page
     $location = $redirectTo;
-    $location .= '?cn='.$companyName;
-    $location .= '&tb='.$timeBefore;
-    $location .= '&ta='.$timeAfter;
+    $location .= '?companyname='.$companyName;
+    $location .= '&timebefore='.$timeBefore;
+    $location .= '&timeafter='.$timeAfter;
 
     header('location: '.$location);
     die();
   } else {
-    // error sending; go back to top page
-    header('location: ./value-calculator-top.php');
+    // error sending email; go back to top page
+    header('location: '.$redirectFrom);
     die();
   }
 
