@@ -43,6 +43,17 @@
   $contractFiling = htmlspecialchars($_POST['form-contract-filing']);
   $email = htmlspecialchars($_POST['form-email']);
 
+  // // test values
+  // $companyName = 'abc123';
+  // $noOfEmployees = '10';
+  // $staffAvgHourlyWage = '1200';
+  // $numberOfAnnualContractRenewals = '1';
+  // $contractCreationTime = '30';
+  // $bookBindingSealingTime = '20';
+  // $shippingTime = '30';
+  // $dataEntry = '30';
+  // $contractFiling = '5';
+
   // calculate times and costs
   $sumOfTimes = $contractCreationTime + $bookBindingSealingTime + $shippingTime + $dataEntry + $contractFiling;
   $timeBefore = $noOfEmployees * $sumOfTimes * $numberOfAnnualContractRenewals;
@@ -53,6 +64,7 @@
   $systemCost = $noOfEmployees * 150 * $numberOfAnnualContractRenewals;
   $laborCost = $timeAfterHours * 2000 * $numberOfAnnualContractRenewals;
   $totalCost = $systemCost + $laborCost;
+  $savingsRatio = floor($costBefore / $totalCost);
 
 
   /*
@@ -71,6 +83,19 @@
 
   // make edits to slides
   $doc = new DOMDocument();
+
+
+  // slide 1
+  $doc->load("./template/ppt/slides/slide1.xml");
+  $slide1 = $doc->documentElement->getElementsByTagName('t');
+  $slide1->item(0)->nodeValue = $companyName;
+  $doc->save("./template/ppt/slides/slide1.xml");
+
+  // slide 10
+  $doc->load("./template/ppt/slides/slide10.xml");
+  $slide10 = $doc->documentElement->getElementsByTagName('t');
+  $slide10->item(0)->nodeValue = '導入効果イメージ例 / '.$companyName.'社様 (契約更新時)';
+  $doc->save("./template/ppt/slides/slide10.xml");
 
   // slide 11
   $doc->load("./template/ppt/slides/slide11.xml");
@@ -106,6 +131,7 @@
   $slide12->item(34)->nodeValue = $numberOfAnnualContractRenewals.'回';
   $slide12->item(22)->nodeValue = number_format($laborCost).'円';
   $slide12->item(27)->nodeValue = number_format($totalCost).'円';
+  $slide12->item(18)->nodeValue = '年間コスト1/'.$savingsRatio.'に';
   $doc->save("./template/ppt/slides/slide12.xml");
 
   // re-zip
