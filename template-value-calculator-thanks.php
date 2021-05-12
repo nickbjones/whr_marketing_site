@@ -11,7 +11,7 @@
 
   include('./_head.php');
 
-  function getResults($imagePath) {
+  function getResults($imagePath, $downloadFileName) {
     return '
       <div class="get-results-top hide-sp">
         <img src="'.$imagePath.'/document-stamp.png">
@@ -66,7 +66,7 @@
       <img class="blue-banner__triangle" src="<?= $imagePath ?>/blue-triangle.png">
     </div>
     <?php include('./value-calculator-shared-calculator.php'); ?>
-    <?= getResults($imagePath) ?>
+    <?= getResults($imagePath, $downloadFileName) ?>
   </div>
   <div class="green-banner green-banner-1">
     <div class="green-banner__inner">
@@ -155,7 +155,7 @@
     </div>
   </div>
   <div class="main-body">
-    <?= getResults($imagePath) ?>
+    <?= getResults($imagePath, $downloadFileName) ?>
   </div>
 </div>
 <?php // get_footer(); ?>

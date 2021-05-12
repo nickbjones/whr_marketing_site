@@ -429,7 +429,7 @@ img {
       margin: 0 auto; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator {
-      padding: 60px 2rem 3rem; } }
+      padding: 60px 32px 48px; } }
   @media (min-width: 768px) {
     .value-calculator-shared-calculator {
       border-radius: 14px;
@@ -500,20 +500,20 @@ img {
       margin: 5px 0 20px; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator .calculator__output-value {
-      padding: 0 0.5rem 0 0; } }
+      padding: 0 8px 0 0; } }
   @media (min-width: 768px) {
     .value-calculator-shared-calculator .calculator__output-value {
-      padding: 0 1rem; } }
+      padding: 0 16px; } }
   .value-calculator-shared-calculator .calculator__output-label {
     white-space: nowrap; }
     @media (max-width: 767px) {
       .value-calculator-shared-calculator .calculator__output-label {
-        padding: 0.5rem 1rem 0 0; }
+        padding: 8px 16px 0 0; }
         .value-calculator-shared-calculator .calculator__output-label:last-of-type {
           padding-right: 0; } }
     @media (min-width: 768px) {
       .value-calculator-shared-calculator .calculator__output-label {
-        padding: 1rem 1rem 0; } }
+        padding: 16px 16px 0; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator .calculator__output-text {
       margin-bottom: 20px; } }
@@ -522,10 +522,10 @@ img {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      margin-bottom: 4rem; } }
+      margin-bottom: 64px; } }
   @media (min-width: 768px) {
     .value-calculator-shared-calculator .calculator__current-time {
-      margin-bottom: 1rem; } }
+      margin-bottom: 16px; } }
   @media (max-width: 767px) {
     .value-calculator-shared-calculator .calculator__current-time .calculator__label {
       -webkit-box-flex: 1;
@@ -588,7 +588,7 @@ img {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        margin-bottom: 2rem; } }
+        margin-bottom: 32px; } }
     .value-calculator-shared-calculator .calculator__welcomehr-time .calculator__label {
       -webkit-box-flex: 1;
       -ms-flex: 1 1 45%;
@@ -691,28 +691,28 @@ img {
       background-repeat: no-repeat, no-repeat; } }
   @media (max-width: 767px) {
     .value-calculator-top-page .top-banner .top-banner__title {
-      margin: 2rem 0; } }
+      margin: 32px 0; } }
   @media (min-width: 768px) {
     .value-calculator-top-page .top-banner .top-banner__title {
-      margin: 1rem 0; } }
+      margin: 16px 0; } }
 
 .value-calculator-top-page .start-simulation-banner .hayamaru-kun-footnote {
-  margin-top: 1rem;
+  margin-top: 16px;
   color: #646464; }
 
 @media (max-width: 767px) {
   .value-calculator-top-page .main-body {
-    padding: 3rem 7px 0; } }
+    padding: 48px 7px 0; } }
 
 @media (min-width: 768px) {
   .value-calculator-top-page .main-body {
-    padding-top: 1rem;
+    padding-top: 16px;
     background-image: url("../images/value-calculator-top/page-background.png");
     background-size: cover;
     background-position: top center; } }
 
 .value-calculator-top-page .main-body .main-body-layout {
-  max-width: calc(950px + 2 * 3rem); }
+  max-width: calc(950px + 2 * 48px); }
 
 .value-calculator-top-page .main-body .how-long-does-it-take {
   width: 100%;
@@ -721,7 +721,7 @@ img {
 
 @media (max-width: 767px) {
   .value-calculator-top-page .main-body .enter-all-items {
-    margin-top: 1rem; } }
+    margin-top: 16px; } }
 
 @media (min-width: 768px) {
   .value-calculator-top-page .main-body .enter-all-items {
@@ -729,11 +729,11 @@ img {
 
 @media (max-width: 767px) {
   .value-calculator-top-page .main-body .step {
-    margin: 4rem 0; } }
+    margin: 64px 0; } }
 
 @media (min-width: 768px) {
   .value-calculator-top-page .main-body .step {
-    margin: 2rem 3rem; } }
+    margin: 32px 48px; } }
 
 .value-calculator-top-page .main-body .step .step-bubble {
   position: relative;
@@ -813,12 +813,12 @@ img {
     align-items: flex-start; }
     @media (max-width: 767px) {
       .value-calculator-top-page .main-body .step .step-bubble .step-bubble__title {
-        margin-bottom: 2rem; } }
+        margin-bottom: 32px; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .main-body .step .step-bubble .step-bubble__title {
-        margin-bottom: 2.5rem; } }
+        margin-bottom: 40px; } }
   .value-calculator-top-page .main-body .step .step-bubble .step-bubble__title-icon {
-    margin-right: 0.5rem; }
+    margin-right: 8px; }
   .value-calculator-top-page .main-body .step .step-bubble .step-bubble__title-text {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
@@ -858,7 +858,7 @@ img {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 1rem; }
+    margin-bottom: 16px; }
     .value-calculator-top-page .main-body .step .step-bubble .input-block--width-half {
       -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
@@ -918,7 +918,7 @@ img {
     width: 100%; }
     @media (max-width: 767px) {
       .value-calculator-top-page .main-body .step .step-bubble .input-block__input {
-        padding: 0.5rem 1rem;
+        padding: 8px 16px;
         font-size: 18px; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .main-body .step .step-bubble .input-block__input {
@@ -952,7 +952,7 @@ img {
         font-size: 16px; } }
 
 .value-calculator-top-page .main-body .step .after-contract {
-  margin-top: 3rem; }
+  margin-top: 48px; }
   @media (max-width: 767px) {
     .value-calculator-top-page .main-body .step .after-contract {
       max-width: 480px;
@@ -967,7 +967,7 @@ img {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        margin-top: 1rem;
+        margin-top: 16px;
         padding: 30px 0;
         background-color: #27C98E;
         border-radius: 14px; } }
@@ -977,7 +977,7 @@ img {
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-        margin: 1rem -5px 0; } }
+        margin: 16px -5px 0; } }
   .value-calculator-top-page .main-body .step .after-contract .after-contract__step {
     position: relative;
     text-align: center;
@@ -993,13 +993,13 @@ img {
         margin: 0 5px; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .main-body .step .after-contract .after-contract__step .after-contract__step-image {
-        padding: 0 3rem; } }
+        padding: 0 48px; } }
     .value-calculator-top-page .main-body .step .after-contract .after-contract__step .after-contract__step-text {
-      margin-top: 1rem; }
+      margin-top: 16px; }
     @media (max-width: 767px) {
       .value-calculator-top-page .main-body .step .after-contract .after-contract__step .blue-arrow {
         display: block;
-        margin: 1rem auto 0; } }
+        margin: 16px auto 0; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .main-body .step .after-contract .after-contract__step .blue-arrow {
         position: absolute;
@@ -1053,13 +1053,13 @@ img {
       .value-calculator-top-page .main-body .success .success__text {
         font-size: 20px;
         line-height: 28px;
-        margin: 3rem 0 2.5rem;
+        margin: 48px 0 40px;
         font-weight: 600; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .main-body .success .success__text {
         font-size: 26px;
         line-height: 38px;
-        margin: 3rem 4rem 0;
+        margin: 48px 64px 0;
         font-weight: 500; } }
 
 .value-calculator-top-page .value-calculator-shared-calculator {
@@ -1089,23 +1089,23 @@ img {
     position: relative; }
     @media (max-width: 767px) {
       .value-calculator-top-page .bottom-banner .bottom-banner__inner {
-        padding: 3rem 2rem; } }
+        padding: 48px 32px; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .bottom-banner .bottom-banner__inner {
-        padding: 5.5rem 0 4.5rem; } }
+        padding: 88px 0 72px; } }
     .value-calculator-top-page .bottom-banner .bottom-banner__inner .hayamaru-kun {
       position: absolute;
       bottom: -30px;
       right: 0; }
   .value-calculator-top-page .bottom-banner .small-underline {
     position: relative;
-    padding-bottom: 1rem; }
+    padding-bottom: 16px; }
     @media (max-width: 767px) {
       .value-calculator-top-page .bottom-banner .small-underline {
-        margin: 1rem 0 2rem; } }
+        margin: 16px 0 32px; } }
     @media (min-width: 768px) {
       .value-calculator-top-page .bottom-banner .small-underline {
-        margin: 1rem 0 3rem; } }
+        margin: 16px 0 48px; } }
     .value-calculator-top-page .bottom-banner .small-underline:after {
       content: '';
       display: block;
@@ -1128,7 +1128,7 @@ img {
     .value-calculator-top-page .bottom-banner .form-wrapper .email-input {
       width: 100%;
       height: 66px;
-      margin: 0.5rem 0 1rem;
+      margin: 8px 0 16px;
       padding: 0 30px 0 60px;
       text-align: center;
       border-radius: 14px;
@@ -1162,7 +1162,7 @@ img {
     .value-calculator-top-page .bottom-banner .form-wrapper .download-button {
       width: 100%;
       height: 66px;
-      margin: 0.5rem 0 1rem;
+      margin: 8px 0 16px;
       padding: 0 30px 0 60px;
       text-align: center;
       border-radius: 14px;
@@ -1181,7 +1181,3 @@ img {
         .value-calculator-top-page .bottom-banner .form-wrapper .download-button {
           font-size: 22px;
           background-position: left 135px center; } }
-
-.value-calculator-top-page .footer {
-  height: 104px;
-  background-color: #2D2F2E; }

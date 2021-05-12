@@ -48,26 +48,26 @@ $imagePath: '../images/value-calculator-top';
     }
     .top-banner__title {
       @include sp-only {
-        margin: 2rem 0;
+        margin: 32px 0;
       }
       @include pc-only {
-        margin: 1rem 0;
+        margin: 16px 0;
       }
     }
   }
   .start-simulation-banner {
     .hayamaru-kun-footnote {
-      margin-top: 1rem;
+      margin-top: 16px;
       color: #646464;
     }
   }
   .main-body {
-    $leftAndRightMargin: 3rem;
+    $leftAndRightMargin: 48px;
     @include sp-only {
-      padding: 3rem 7px 0;
+      padding: 48px 7px 0;
     }
     @include pc-only {
-      padding-top: 1rem;
+      padding-top: 16px;
       background-image: url($imagePath + '/page-background.png');
       background-size: cover;
       background-position: top center;
@@ -82,7 +82,7 @@ $imagePath: '../images/value-calculator-top';
     }
     .enter-all-items {
       @include sp-only {
-        margin-top: 1rem;
+        margin-top: 16px;
       }
       @include pc-only {
         margin-top: 2px;
@@ -90,10 +90,10 @@ $imagePath: '../images/value-calculator-top';
     }
     .step {
       @include sp-only {
-        margin: 4rem 0;
+        margin: 64px 0;
       }
       @include pc-only {
-        margin: 2rem $leftAndRightMargin;
+        margin: 32px $leftAndRightMargin;
       }
       .step-bubble {
         position: relative;
@@ -154,14 +154,14 @@ $imagePath: '../images/value-calculator-top';
           display: flex;
           align-items: flex-start;
           @include sp-only {
-            margin-bottom: 2rem;
+            margin-bottom: 32px;
           }
           @include pc-only {
-            margin-bottom: 2.5rem;
+            margin-bottom: 40px;
           }
         }
         .step-bubble__title-icon {
-          margin-right: 0.5rem;
+          margin-right: 8px;
         }
         .step-bubble__title-text {
           flex: 0 1 100%;
@@ -192,7 +192,7 @@ $imagePath: '../images/value-calculator-top';
           display: inline-flex;
           flex-wrap: wrap;
           align-items: center;
-          margin-bottom: 1rem;
+          margin-bottom: 16px;
           &--width {
             &-half {
               flex: 0 0 50%;
@@ -250,7 +250,7 @@ $imagePath: '../images/value-calculator-top';
           border-radius: 8px;
           border: 3.5px solid #DEDEDE;
           @include sp-only {
-            padding: 0.5rem 1rem;
+            padding: 8px 16px;
             font-size: 18px;
           }
           @include pc-only {
@@ -274,7 +274,7 @@ $imagePath: '../images/value-calculator-top';
         }
       }
       .after-contract {
-        margin-top: 3rem;
+        margin-top: 48px;
         @include sp-only {
           @include centerTablet;
         }
@@ -282,14 +282,14 @@ $imagePath: '../images/value-calculator-top';
           display: flex;
           @include sp-only {
             flex-direction: column;
-            margin-top: 1rem;
+            margin-top: 16px;
             padding: 30px 0;
             background-color: $green;
             border-radius: 14px;
           }
           @include pc-only {
             flex-direction: row;
-            margin: 1rem -5px 0;
+            margin: 16px -5px 0;
           }
         }
         .after-contract__step {
@@ -307,16 +307,16 @@ $imagePath: '../images/value-calculator-top';
           }
           .after-contract__step-image {
             @include pc-only {
-              padding: 0 3rem;
+              padding: 0 48px;
             }
           }
           .after-contract__step-text {
-            margin-top: 1rem;
+            margin-top: 16px;
           }
           .blue-arrow {
             @include sp-only {
               display: block;
-              margin: 1rem auto 0;
+              margin: 16px auto 0;
             }
             @include pc-only {
               position: absolute;
@@ -358,14 +358,13 @@ $imagePath: '../images/value-calculator-top';
         @include sp-only {
           font-size: 20px;
           line-height: 28px;
-          margin: 3rem 0 2.5rem;
+          margin: 48px 0 40px;
           font-weight: $weightBolder;
-          // success-sp.png
         }
         @include pc-only {
           font-size: 26px;
           line-height: 38px;
-          margin: 3rem 4rem 0;
+          margin: 48px 64px 0;
           font-weight: $weightBold;
         }
       }
@@ -386,10 +385,10 @@ $imagePath: '../images/value-calculator-top';
     .bottom-banner__inner {
       position: relative;
       @include sp-only {
-        padding: 3rem 2rem;
+        padding: 48px 32px;
       }
       @include pc-only {
-        padding: 5.5rem 0 4.5rem;
+        padding: 88px 0 72px;
       }
       .hayamaru-kun {
         position: absolute;
@@ -400,12 +399,12 @@ $imagePath: '../images/value-calculator-top';
     .small-underline {
       position: relative;
       @include sp-only {
-        margin: 1rem 0 2rem;
+        margin: 16px 0 32px;
       }
       @include pc-only {
-        margin: 1rem 0 3rem;
+        margin: 16px 0 48px;
       }
-      padding-bottom: 1rem;
+      padding-bottom: 16px;
       &:after {
         content: '';
         display: block;
@@ -429,7 +428,7 @@ $imagePath: '../images/value-calculator-top';
       @mixin form-button-styles {
         width: 100%;
         height: 66px;
-        margin: 0.5rem 0 1rem;
+        margin: 8px 0 16px;
         padding: 0 30px 0 60px;
         text-align: center;
         border-radius: 14px;
@@ -476,11 +475,4 @@ $imagePath: '../images/value-calculator-top';
       }
     }
   }
-
-  // REMOVE
-  .footer {
-    height: 104px;
-    background-color: #2D2F2E;
-  }
-
 }

@@ -7,7 +7,7 @@
   background-color: #EDFFF9;
   box-shadow: 0px 8px 8px #0000001f;
   @include sp-only {
-    padding: 60px 2rem 3rem;
+    padding: 60px 32px 48px;
   }
   @include pc-only {
     border-radius: 14px;
@@ -55,22 +55,22 @@
   }
   .calculator__output-value {
     @include sp-only {
-      padding: 0 0.5rem 0 0;
+      padding: 0 8px 0 0;
     }
     @include pc-only {
-      padding: 0 1rem;
+      padding: 0 16px;
     }
   }
   .calculator__output-label {
     white-space: nowrap;
     @include sp-only {
-      padding: 0.5rem 1rem 0 0;
+      padding: 8px 16px 0 0;
       &:last-of-type {
         padding-right: 0;
       }
     }
     @include pc-only {
-      padding: 1rem 1rem 0;
+      padding: 16px 16px 0;
     }
   }
   .calculator__output-text {
@@ -81,10 +81,10 @@
   .calculator__current-time {
     @include sp-only {
       align-items: center;
-      margin-bottom: 4rem;
+      margin-bottom: 64px;
     }
     @include pc-only {
-      margin-bottom: 1rem;
+      margin-bottom: 16px;
     }
     .calculator__label {
       @include sp-only {
@@ -147,7 +147,7 @@
     color: $green;
     @include sp-only {
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 32px;
     }
     .calculator__label {
       flex: 1 1 45%;
