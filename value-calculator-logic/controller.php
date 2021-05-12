@@ -7,27 +7,6 @@
   error_reporting(E_ALL);
 
   /*
-    settings
-  */
-  $templateSourceFilename = 'template.pptx';
-  $outputPptFilename = 'output.pptx';
-  // $redirectFrom = '/template-value-calculator-top';
-  // $redirectTo = '/template-value-calculator-thanks';
-  $redirectFrom = '/template-value-calculator-top.php';
-  $redirectTo = '/template-value-calculator-thanks.php';
-
-  $inputZipFilename = 'template.zip';
-  $extractFolderName = 'template';
-  $outputZipFilename = 'output.zip';
-
-  $emailSubject = 'WelcomeHR PowerPoint';
-  $emailMessage = 'Here is your PowerPoint file!';
-  $emailFrom = 'no-reply@welcomehr.com';
-  $emailHeaders = 'From: '. $emailFrom . "\r\n";
-
-
-
-  /*
     get input values
   */
 
@@ -42,7 +21,6 @@
   $dataEntry = htmlspecialchars($_POST['form-data-entry']);
   $contractFiling = htmlspecialchars($_POST['form-contract-filing']);
   $email = htmlspecialchars($_POST['form-email']);
-
   // // test values
   // $companyName = 'abc123';
   // $noOfEmployees = '10';
@@ -53,6 +31,30 @@
   // $shippingTime = '30';
   // $dataEntry = '30';
   // $contractFiling = '5';
+
+  /*
+    settings
+  */
+
+  $templateSourceFilename = 'template.pptx';
+  $outputPptFilename = $companyName.'御中_WelcomeHR_コストパーフォーマンス'.date('Ymd').'.pptx';
+  $redirectFrom = '/template-value-calculator-top';
+  $redirectTo = '/template-value-calculator-thanks';
+
+  $inputZipFilename = 'template.zip';
+  $extractFolderName = 'template';
+  $outputZipFilename = 'output.zip';
+
+  $emailSubject = 'WelcomeHR PowerPoint';
+  $emailMessage = 'Here is your PowerPoint file!';
+  $emailFrom = 'no-reply@welcomehr.com';
+  $emailHeaders = 'From: '. $emailFrom . "\r\n";
+
+
+
+  /*
+    calculate times and costs
+  */
 
   // calculate times and costs
   $sumOfTimes = $contractCreationTime + $bookBindingSealingTime + $shippingTime + $dataEntry + $contractFiling;
