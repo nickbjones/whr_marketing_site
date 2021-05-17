@@ -7,7 +7,7 @@
   error_reporting(E_ALL);
 
   $imagePath = './images/value-calculator-thanks';
-  $downloadFileName = 'output.pptx';
+  $downloadFileName = isset($_GET['filename']) ? urldecode($_GET['filename']) : '';
 
   include('./_head.php');
 

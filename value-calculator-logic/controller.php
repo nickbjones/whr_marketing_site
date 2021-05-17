@@ -175,6 +175,7 @@
     $location .= '?companyname='.$companyName;
     $location .= '&timebefore='.$timeBefore;
     $location .= '&timeafter='.$timeAfter;
+    $location .= '&filename='.urlencode($outputPptFilename);
 
     header('location: '.$location);
     die();
