@@ -39,7 +39,7 @@
   $templateSourceFilename = 'template.pptx';
   $outputPptFilename = $companyName.'御中_WelcomeHR_コストパーフォーマンス'.date('Ymd').'.pptx';
   $redirectFrom = '/template-value-calculator-top';
-  $redirectTo = '/template-value-calculator-thanks';
+  $redirectTo = '/template-value-calculator-thanks.php';
 
   $inputZipFilename = 'template.zip';
   $extractFolderName = 'template';

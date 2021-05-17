@@ -19,7 +19,7 @@
         <img src="'.$imagePath.'/hayamaru-kun.png">
       </div>
       <div class="get-results-bottom layout">
-        <a class="button download-button" href="'.get_template_directory_uri().'/value-calculator-logic/'.$downloadFileName.'" download="'.$downloadFileName.'"><img class="button-icon" src="'.$imagePath.'/icon-download.png">ダウンロードする</a>
+        <a class="button download-button" href="/value-calculator-logic/'.$downloadFileName.'" download="'.$downloadFileName.'"><img class="button-icon" src="'.$imagePath.'/icon-download.png">ダウンロードする</a>
         <div class="consultation-button-wrapper hide-pc">
           <a class="button consultation-button" href="/ja/contact"><img class="button-icon" src="'.$imagePath.'/icon-people.png"><span class="txt-yellow">無料トライアル</span>のご相談</a>
           <p class="consultation-button__fineprint txt-11">「無料トライアル」や「お見積り」「不明点」等、ぜひお気軽にご相談ください。担当者が丁寧にご説明させていただきます。</p>
