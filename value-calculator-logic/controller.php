@@ -20,7 +20,7 @@
   $shippingTime = htmlspecialchars($_POST['form-shipping-time']);
   $dataEntry = htmlspecialchars($_POST['form-data-entry']);
   $contractFiling = htmlspecialchars($_POST['form-contract-filing']);
-  $email = htmlspecialchars($_POST['form-email']);
+  $emailTo = htmlspecialchars($_POST['form-email']);
   // // test values
   // $companyName = 'abc123';
   // $noOfEmployees = '10';
@@ -44,12 +44,6 @@
   $inputZipFilename = 'template.zip';
   $extractFolderName = 'template';
   $outputZipFilename = 'output.zip';
-
-  $emailSubject = 'WelcomeHR PowerPoint';
-  $emailMessage = 'Here is your PowerPoint file!';
-  $emailFrom = 'no-reply@welcomehr.com';
-  $emailHeaders = 'From: '. $emailFrom . "\r\n";
-
 
 
   /*
@@ -164,9 +158,14 @@
   /*
     send email and redirect
   */
+  include_once './email-content.php';
+  $emailSubject = getEmailSubject();
+  $emailMessage = getEmailMessage($companyName);
+  $emailHeaders = getEmailHeaders();
+  $emailAttachments = array('./'.$outputPptFilename);
 
   // send email
-  // $emailSent = wp_mail($email, $emailSubject, $emailMessage, $emailHeaders, array('./'.$outputPptFilename));
+  // $emailSent = wp_mail($emailTo, $emailSubject, $emailMessage, $emailHeaders, $emailAttachments);
   $emailSent = true;
 
   if ($emailSent) {
