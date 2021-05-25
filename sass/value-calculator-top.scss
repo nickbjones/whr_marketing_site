@@ -4,6 +4,7 @@
 $imagePath: '../images/value-calculator-top';
 
 .value-calculator-top-page {
+  font-size: 16px;
   .blue-background {
     @include flex-center;
     @include sp-only {
