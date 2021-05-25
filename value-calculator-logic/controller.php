@@ -50,7 +50,6 @@
     calculate times and costs
   */
 
-  // calculate times and costs
   $sumOfTimes = $contractCreationTime + $bookBindingSealingTime + $shippingTime + $dataEntry + $contractFiling;
   $timeBefore = $noOfEmployees * $sumOfTimes * $numberOfAnnualContractRenewals;
   $timeBeforeHours = round($timeBefore / 60);
@@ -60,7 +59,8 @@
   $systemCost = $noOfEmployees * 150 * $numberOfAnnualContractRenewals;
   $laborCost = $timeAfterHours * 2000 * $numberOfAnnualContractRenewals;
   $totalCost = $systemCost + $laborCost;
-  $savingsRatio = floor($costBefore / $totalCost);
+  $costSavingsRatio = floor($costBefore / $totalCost);
+  $hoursSavingsRatio = floor($timeBeforeHours / $timeAfterHours);
 
 
   /*
@@ -76,10 +76,8 @@
   $zip->extractTo('./'.$extractFolderName);
   $zip->close();
 
-
   // make edits to slides
   $doc = new DOMDocument();
-
 
   // slide 1
   $doc->load("./template/ppt/slides/slide1.xml");
@@ -99,6 +97,7 @@
   $slide11->item(8)->nodeValue = '■契約更新対象者数 : '.$noOfEmployees.'名';
   $slide11->item(9)->nodeValue = '■店長の時給 : '.number_format($staffAvgHourlyWage).'円';
   $slide11->item(10)->nodeValue = '■契約更新の回数 : 年'.$numberOfAnnualContractRenewals.'回';
+  $slide11->item(30)->nodeValue = '1/'.$hoursSavingsRatio;
   $slide11->item(11)->nodeValue = $noOfEmployees.'人';
   $slide11->item(12)->nodeValue = $sumOfTimes.'分';
   $slide11->item(18)->nodeValue = $numberOfAnnualContractRenewals.'回';
@@ -127,7 +126,7 @@
   $slide12->item(34)->nodeValue = $numberOfAnnualContractRenewals.'回';
   $slide12->item(22)->nodeValue = number_format($laborCost).'円';
   $slide12->item(27)->nodeValue = number_format($totalCost).'円';
-  $slide12->item(18)->nodeValue = '年間コスト1/'.$savingsRatio.'に';
+  $slide12->item(18)->nodeValue = '年間コスト1/'.$costSavingsRatio.'に';
   $doc->save("./template/ppt/slides/slide12.xml");
 
   // re-zip
@@ -158,8 +157,8 @@
   /*
     send email and redirect
   */
-  include_once './email-content.php';
-  $emailSubject = getEmailSubject();
+  require_once './email-content.php';
+  $emailSubject = getEmailSubject($companyName);
   $emailMessage = getEmailMessage($companyName);
   $emailHeaders = getEmailHeaders();
   $emailAttachments = array('./'.$outputPptFilename);
