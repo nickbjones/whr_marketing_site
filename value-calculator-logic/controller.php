@@ -168,13 +168,31 @@
   $emailSent = true;
 
   if ($emailSent) {
+    // remove temporary folder
+    if (is_dir($extractFolderName)) {
+      $iterator = new RecursiveDirectoryIterator($extractFolderName, RecursiveDirectoryIterator::SKIP_DOTS);
+      $files = new RecursiveIteratorIterator($iterator, RecursiveIteratorIterator::CHILD_FIRST);
+      foreach($files as $file) {
+        if ($file->isDir()){
+          rmdir($file->getRealPath());
+        } else {
+          unlink($file->getRealPath());
+        }
+      }
+      rmdir($extractFolderName);
+    }
+
+    // remove temporary file
+    if (file_exists($inputZipFilename)) {
+      unlink($inputZipFilename);
+    }
+
     // redirect to thanks page
     $location = $redirectTo;
     $location .= '?companyname='.$companyName;
     $location .= '&timebefore='.$timeBefore;
     $location .= '&timeafter='.$timeAfter;
     $location .= '&filename='.urlencode($outputPptFilename);
-
     header('location: '.$location);
     die();
   } else {
